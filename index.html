@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <title>Important Food Business 🍕</title>
 
+
   <style>
+
     /* =========================================
        BASIC SETUP
     ========================================= */
@@ -17,7 +24,9 @@
       padding: 0;
     }
 
+
     :root {
+
       --pink: #ff7f9f;
       --pink-dark: #e95d82;
       --pink-soft: #fff0f5;
@@ -34,9 +43,12 @@
       --muted: #82777c;
 
       --white: #ffffff;
+
     }
 
+
     body {
+
       min-height: 100vh;
 
       font-family:
@@ -45,33 +57,45 @@
         "Segoe UI",
         sans-serif;
 
+
       background:
+
         radial-gradient(
           circle at 10% 10%,
           #ffe3ec 0%,
           transparent 30%
         ),
+
         radial-gradient(
           circle at 90% 90%,
           #fff0b8 0%,
           transparent 30%
         ),
+
         linear-gradient(
           135deg,
           #fffafb,
           #fffdf5
         );
 
+
       color: var(--text);
 
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
+
 
       padding: 22px;
 
+
       overflow-x: hidden;
+
     }
+
 
 
     /* =========================================
@@ -79,6 +103,7 @@
     ========================================= */
 
     .floating-food {
+
       position: fixed;
 
       pointer-events: none;
@@ -87,55 +112,91 @@
 
       opacity: 0.14;
 
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size:
+        clamp(
+          2rem,
+          5vw,
+          3.5rem
+        );
+
 
       animation:
-        floatFood 8s ease-in-out infinite;
+        floatFood
+        8s
+        ease-in-out
+        infinite;
+
     }
+
 
     .f1 {
       top: 8%;
       left: 5%;
     }
 
+
     .f2 {
+
       top: 15%;
       right: 6%;
+
       animation-delay: -2s;
+
     }
+
 
     .f3 {
+
       bottom: 10%;
       left: 7%;
+
       animation-delay: -4s;
+
     }
+
 
     .f4 {
+
       bottom: 8%;
       right: 8%;
+
       animation-delay: -6s;
+
     }
+
 
     .f5 {
+
       top: 5%;
       left: 48%;
+
       animation-delay: -3s;
+
     }
 
+
     @keyframes floatFood {
+
       0%,
       100% {
+
         transform:
           translateY(0)
           rotate(0deg);
+
       }
 
+
       50% {
+
         transform:
           translateY(-25px)
           rotate(8deg);
+
       }
+
     }
+
 
 
     /* =========================================
@@ -143,34 +204,67 @@
     ========================================= */
 
     .app {
+
       position: relative;
 
       z-index: 2;
 
+
       width: 100%;
+
       max-width: 760px;
+
 
       min-height: 570px;
 
-      padding: 45px 38px;
+
+      padding:
+        45px
+        38px;
+
 
       background:
-        rgba(255, 255, 255, 0.96);
+        rgba(
+          255,
+          255,
+          255,
+          0.96
+        );
+
 
       border:
         1px solid
-        rgba(255, 255, 255, 0.9);
+        rgba(
+          255,
+          255,
+          255,
+          0.9
+        );
+
 
       border-radius: 32px;
 
+
       box-shadow:
-        0 30px 80px
-        rgba(80, 55, 65, 0.13);
+        0
+        30px
+        80px
+        rgba(
+          80,
+          55,
+          65,
+          0.13
+        );
+
 
       text-align: center;
 
-      backdrop-filter: blur(12px);
+
+      backdrop-filter:
+        blur(12px);
+
     }
+
 
 
     /* =========================================
@@ -178,38 +272,65 @@
     ========================================= */
 
     .music-button {
+
       position: fixed;
 
+
       top: 18px;
+
       right: 18px;
+
 
       z-index: 50;
 
+
       width: 48px;
+
       height: 48px;
 
+
       border: none;
+
       border-radius: 50%;
+
 
       background: white;
 
+
       box-shadow:
-        0 8px 25px
-        rgba(60, 40, 48, 0.16);
+        0
+        8px
+        25px
+        rgba(
+          60,
+          40,
+          48,
+          0.16
+        );
+
 
       cursor: pointer;
 
+
       font-size: 1.2rem;
 
+
       transition:
-        transform 0.2s ease;
+        transform
+        0.2s
+        ease;
+
     }
 
+
     .music-button:hover {
+
       transform:
         scale(1.08)
         rotate(4deg);
+
     }
+
 
 
     /* =========================================
@@ -217,57 +338,100 @@
     ========================================= */
 
     .tag {
+
       display: inline-block;
 
-      padding: 8px 15px;
+
+      padding:
+        8px
+        15px;
+
 
       margin-bottom: 18px;
 
+
       border-radius: 50px;
 
-      background: var(--pink-soft);
 
-      color: var(--pink-dark);
+      background:
+        var(--pink-soft);
+
+
+      color:
+        var(--pink-dark);
+
 
       font-size: 0.75rem;
+
       font-weight: 800;
+
 
       letter-spacing: 1.5px;
 
+
       text-transform: uppercase;
+
     }
 
+
     h1 {
+
       font-size:
-        clamp(2.3rem, 7vw, 4.1rem);
+        clamp(
+          2.3rem,
+          7vw,
+          4.1rem
+        );
+
 
       line-height: 1.05;
 
+
       margin-bottom: 16px;
+
     }
 
+
     h2 {
+
       font-size:
-        clamp(1.8rem, 6vw, 2.8rem);
+        clamp(
+          1.8rem,
+          6vw,
+          2.8rem
+        );
+
 
       line-height: 1.12;
 
+
       margin-bottom: 14px;
+
     }
 
+
     .subtitle {
+
       max-width: 560px;
 
+
       margin:
-        0 auto
+        0
+        auto
         28px;
 
-      color: var(--muted);
+
+      color:
+        var(--muted);
+
 
       font-size: 1rem;
 
+
       line-height: 1.7;
+
     }
+
 
 
     /* =========================================
@@ -275,33 +439,52 @@
     ========================================= */
 
     .screen {
+
       display: none;
 
+
       animation:
-        screenIn 0.4s ease;
+        screenIn
+        0.4s
+        ease;
+
     }
+
 
     .screen.active {
+
       display: block;
+
     }
 
+
     @keyframes screenIn {
+
       from {
+
         opacity: 0;
+
 
         transform:
           translateY(12px)
           scale(0.985);
+
       }
 
+
       to {
+
         opacity: 1;
+
 
         transform:
           translateY(0)
           scale(1);
+
       }
+
     }
+
 
 
     /* =========================================
@@ -309,82 +492,150 @@
     ========================================= */
 
     button {
+
       font-family: inherit;
+
     }
 
+
     .button-row {
+
       display: flex;
 
+
       justify-content: center;
+
       align-items: center;
+
 
       flex-wrap: wrap;
 
+
       gap: 12px;
+
     }
 
+
     .btn {
+
       border: none;
+
 
       border-radius: 17px;
 
-      padding: 15px 25px;
+
+      padding:
+        15px
+        25px;
+
 
       cursor: pointer;
 
+
       font-size: 1rem;
+
       font-weight: 750;
 
+
       transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+
+        transform
+        0.2s
+        ease,
+
+        box-shadow
+        0.2s
+        ease;
+
     }
+
 
     .btn:hover {
+
       transform:
         translateY(-3px);
+
     }
 
+
     .primary {
+
       color: white;
 
+
       background:
+
         linear-gradient(
           135deg,
           var(--pink),
           #ff9bb4
         );
 
+
       box-shadow:
-        0 10px 25px
-        rgba(255, 127, 159, 0.28);
+        0
+        10px
+        25px
+        rgba(
+          255,
+          127,
+          159,
+          0.28
+        );
+
     }
+
 
     .primary:hover {
+
       box-shadow:
-        0 15px 30px
-        rgba(255, 127, 159, 0.38);
+        0
+        15px
+        30px
+        rgba(
+          255,
+          127,
+          159,
+          0.38
+        );
+
     }
+
 
     .secondary {
-      background: #f4eff1;
 
-      color: #655a5f;
+      background:
+        #f4eff1;
+
+
+      color:
+        #655a5f;
+
     }
+
 
     .back {
-      background: transparent;
 
-      color: #8b7e84;
+      background:
+        transparent;
+
+
+      color:
+        #8b7e84;
+
     }
 
+
     .btn:disabled {
+
       opacity: 0.55;
 
       cursor: not-allowed;
 
       transform: none;
+
     }
+
 
 
     /* =========================================
@@ -392,74 +643,132 @@
     ========================================= */
 
     .choices {
+
       display: grid;
 
+
       grid-template-columns:
-        repeat(4, 1fr);
+        repeat(
+          4,
+          1fr
+        );
+
 
       gap: 12px;
 
-      margin: 26px 0;
+
+      margin:
+        26px
+        0;
+
     }
 
+
     .choice {
-      padding: 18px 8px;
+
+      padding:
+        18px
+        8px;
+
 
       border:
         2px solid
         #f2e7eb;
 
+
       border-radius: 20px;
 
-      background: white;
+
+      background:
+        white;
+
 
       cursor: pointer;
 
+
       font-weight: 750;
 
-      color: #55494e;
+
+      color:
+        #55494e;
+
 
       user-select: none;
 
+
       transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease;
+
+        transform
+        0.2s
+        ease,
+
+        border-color
+        0.2s
+        ease,
+
+        background
+        0.2s
+        ease;
+
     }
 
+
     .choice:hover {
+
       transform:
         translateY(-4px);
+
 
       border-color:
         #ffbacb;
 
+
       background:
         #fffafb;
+
     }
 
+
     .choice.selected {
+
       transform:
         translateY(-3px);
+
 
       border-color:
         var(--pink);
 
+
       background:
         var(--pink-soft);
 
+
       box-shadow:
-        0 8px 20px
-        rgba(255, 127, 159, 0.15);
+        0
+        8px
+        20px
+        rgba(
+          255,
+          127,
+          159,
+          0.15
+        );
+
     }
 
+
     .emoji {
+
       display: block;
+
 
       margin-bottom: 8px;
 
+
       font-size: 2.25rem;
+
     }
+
 
 
     /* =========================================
@@ -467,68 +776,121 @@
     ========================================= */
 
     .field-label {
+
       display: block;
 
+
       margin:
-        14px 0
+        14px
+        0
         8px;
+
 
       text-align: left;
 
+
       font-weight: 750;
+
     }
 
+
     .input {
+
       width: 100%;
 
-      padding: 16px 18px;
+
+      padding:
+        16px
+        18px;
+
 
       border:
         2px solid
         #eee5e8;
 
+
       border-radius: 17px;
+
 
       outline: none;
 
-      background: white;
 
-      color: var(--text);
+      background:
+        white;
+
+
+      color:
+        var(--text);
+
 
       font-family: inherit;
+
       font-size: 1rem;
 
+
       transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+
+        border-color
+        0.2s
+        ease,
+
+        box-shadow
+        0.2s
+        ease;
+
     }
 
+
     .input:focus {
+
       border-color:
         #ff9bb4;
 
+
       box-shadow:
-        0 0 0 4px
-        rgba(255, 127, 159, 0.1);
+        0
+        0
+        0
+        4px
+        rgba(
+          255,
+          127,
+          159,
+          0.1
+        );
+
     }
 
+
     textarea.input {
-      min-height: 210px;
+
+      min-height: 230px;
+
 
       resize: vertical;
 
+
       line-height: 1.6;
+
     }
 
+
     .helper {
+
       margin-top: 9px;
 
-      color: #9d9096;
+
+      color:
+        #9d9096;
+
 
       font-size: 0.85rem;
 
+
       text-align: left;
+
     }
+
 
 
     /* =========================================
@@ -536,114 +898,549 @@
     ========================================= */
 
     .notes-card {
+
       padding: 20px;
+
 
       margin-bottom: 20px;
 
+
       border-radius: 22px;
 
+
       background:
+
         linear-gradient(
           135deg,
           #fff8dc,
           #fffdf3
         );
 
+
       border:
         1px solid
         #f7e8a8;
 
+
       text-align: left;
+
     }
 
+
     .notes-card strong {
+
       display: block;
+
 
       margin-bottom: 6px;
 
-      color: #8a6c16;
+
+      color:
+        #8a6c16;
+
     }
 
+
     .character-count {
+
       margin-top: 7px;
+
 
       text-align: right;
 
-      color: #aaa0a4;
+
+      color:
+        #aaa0a4;
+
 
       font-size: 0.82rem;
+
     }
+
 
 
     /* =========================================
-       BOOK RECOMMENDATIONS
+       BOOK CARD
     ========================================= */
 
     .book-section {
+
       margin:
-        24px auto
-        27px;
+        28px
+        auto;
 
-      padding: 18px 20px;
 
-      max-width: 590px;
+      padding: 18px;
 
-      border-radius: 22px;
+
+      max-width: 620px;
+
+
+      border-radius: 24px;
+
 
       background:
+
         linear-gradient(
           135deg,
-          var(--blue-soft),
-          #f7fcff
+          #f4fbff,
+          #fffaf1
         );
+
 
       border:
         1px solid
-        #ccecff;
+        #dceef7;
+
+
+      box-shadow:
+        0
+        10px
+        30px
+        rgba(
+          72,
+          105,
+          120,
+          0.08
+        );
+
 
       overflow: hidden;
+
     }
 
-    .book-label {
-      color: #5296bd;
 
-      font-size: 0.75rem;
-      font-weight: 800;
+    .book-label {
+
+      margin-bottom: 14px;
+
+
+      color:
+        #6b9db7;
+
+
+      font-size: 0.72rem;
+
+      font-weight: 850;
+
 
       text-transform: uppercase;
 
-      letter-spacing: 1.3px;
 
-      margin-bottom: 8px;
+      letter-spacing: 1.4px;
+
     }
 
-    .book-recommendation {
-      min-height: 55px;
+
+
+    /* Whole book card */
+
+    .book-card {
 
       display: flex;
 
+
       align-items: center;
-      justify-content: center;
 
-      color: #405b69;
 
-      font-weight: 700;
+      gap: 18px;
 
-      line-height: 1.5;
+
+      min-height: 155px;
+
+
+      padding: 15px;
+
 
       opacity: 1;
 
-      transition:
-        opacity 0.45s ease,
-        transform 0.45s ease;
-    }
-
-    .book-recommendation.fade {
-      opacity: 0;
 
       transform:
-        translateY(7px);
+        translateY(0);
+
+
+      transition:
+
+        opacity
+        0.65s
+        ease,
+
+        transform
+        0.65s
+        ease;
+
     }
+
+
+    .book-card.fade {
+
+      opacity: 0;
+
+
+      transform:
+        translateY(8px);
+
+    }
+
+
+
+    /* =========================================
+       BOOK COVER GRAPHIC
+    ========================================= */
+
+    .book-cover {
+
+      position: relative;
+
+
+      flex-shrink: 0;
+
+
+      width: 100px;
+
+      height: 142px;
+
+
+      padding:
+        14px
+        10px;
+
+
+      display: flex;
+
+
+      flex-direction: column;
+
+
+      justify-content: center;
+
+      align-items: center;
+
+
+      border-radius:
+        4px
+        13px
+        13px
+        4px;
+
+
+      background:
+
+        linear-gradient(
+          145deg,
+          #ff8da8,
+          #ffb36b
+        );
+
+
+      color: white;
+
+
+      text-align: center;
+
+
+      box-shadow:
+
+        8px
+        9px
+        18px
+        rgba(
+          66,
+          49,
+          56,
+          0.18
+        );
+
+
+      overflow: hidden;
+
+
+      transition:
+        background
+        0.5s
+        ease;
+
+    }
+
+
+
+    /* Spine */
+
+    .book-cover::before {
+
+      content: "";
+
+
+      position: absolute;
+
+
+      top: 0;
+
+      left: 7px;
+
+
+      width: 3px;
+
+      height: 100%;
+
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.28
+        );
+
+    }
+
+
+
+    /* Cover shine */
+
+    .book-cover::after {
+
+      content: "";
+
+
+      position: absolute;
+
+
+      width: 100px;
+
+      height: 100px;
+
+
+      top: -55px;
+
+      right: -50px;
+
+
+      border-radius: 50%;
+
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.18
+        );
+
+    }
+
+
+    .book-cover-icon {
+
+      position: relative;
+
+
+      z-index: 2;
+
+
+      margin-bottom: 9px;
+
+
+      font-size: 2.1rem;
+
+    }
+
+
+    .book-cover-title {
+
+      position: relative;
+
+
+      z-index: 2;
+
+
+      font-size: 0.68rem;
+
+
+      line-height: 1.25;
+
+
+      font-weight: 850;
+
+
+      text-transform: uppercase;
+
+
+      letter-spacing: 0.4px;
+
+    }
+
+
+
+    /* =========================================
+       BOOK INFO
+    ========================================= */
+
+    .book-info {
+
+      flex: 1;
+
+
+      text-align: left;
+
+    }
+
+
+    .book-type {
+
+      display: inline-block;
+
+
+      margin-bottom: 8px;
+
+
+      padding:
+        5px
+        9px;
+
+
+      border-radius: 30px;
+
+
+      background:
+        rgba(
+          116,
+          181,
+          215,
+          0.13
+        );
+
+
+      color:
+        #6097b4;
+
+
+      font-size: 0.68rem;
+
+
+      font-weight: 850;
+
+
+      text-transform: uppercase;
+
+
+      letter-spacing: 1px;
+
+    }
+
+
+    .book-main-text {
+
+      margin-bottom: 9px;
+
+
+      color:
+        #40545e;
+
+
+      font-size: 1rem;
+
+
+      line-height: 1.55;
+
+
+      font-weight: 700;
+
+    }
+
+
+    .book-source {
+
+      color:
+        #8a9aa2;
+
+
+      font-size: 0.82rem;
+
+
+      line-height: 1.4;
+
+    }
+
+
+
+    /* =========================================
+       BOOK TIMER
+    ========================================= */
+
+    .book-timer {
+
+      width: 100%;
+
+
+      height: 4px;
+
+
+      margin-top: 13px;
+
+
+      overflow: hidden;
+
+
+      border-radius: 20px;
+
+
+      background:
+        #e0edf3;
+
+    }
+
+
+    .book-timer-fill {
+
+      width: 0%;
+
+
+      height: 100%;
+
+
+      border-radius: 20px;
+
+
+      background:
+
+        linear-gradient(
+          90deg,
+          #8fd3ff,
+          #ff9bb4
+        );
+
+    }
+
+
+    .book-timer-fill.running {
+
+      animation:
+        bookTimer
+        7s
+        linear
+        forwards;
+
+    }
+
+
+    @keyframes bookTimer {
+
+      from {
+
+        width: 0%;
+
+      }
+
+
+      to {
+
+        width: 100%;
+
+      }
+
+    }
+
 
 
     /* =========================================
@@ -651,33 +1448,50 @@
     ========================================= */
 
     .progress {
+
       display: flex;
+
 
       justify-content: center;
 
+
       gap: 7px;
 
+
       margin-top: 28px;
+
     }
 
+
     .dot {
+
       width: 8px;
+
       height: 8px;
+
 
       border-radius: 50%;
 
+
       background:
         #eadfe3;
+
     }
 
+
     .dot.active {
+
       width: 25px;
+
 
       border-radius: 10px;
 
+
       background:
         var(--pink);
+
     }
+
 
 
     /* =========================================
@@ -685,16 +1499,24 @@
     ========================================= */
 
     .loading {
+
       display: none;
+
 
       margin-top: 16px;
 
-      color: var(--pink-dark);
+
+      color:
+        var(--pink-dark);
+
 
       font-weight: 700;
 
+
       font-size: 0.9rem;
+
     }
+
 
 
     /* =========================================
@@ -702,109 +1524,177 @@
     ========================================= */
 
     .final-emoji {
+
       font-size: 5rem;
+
 
       margin-bottom: 12px;
 
+
       animation:
-        bounce 1.2s infinite;
+        bounce
+        1.2s
+        infinite;
+
     }
+
 
     @keyframes bounce {
+
       0%,
       100% {
+
         transform:
           translateY(0);
+
       }
+
 
       50% {
+
         transform:
           translateY(-9px);
+
       }
+
     }
 
+
     .receipt {
-      margin: 25px 0;
+
+      margin:
+        25px
+        0;
+
 
       padding: 25px;
+
 
       border:
         2px dashed
         #ffc6a8;
 
+
       border-radius: 22px;
+
 
       background:
         #fff9f4;
 
+
       text-align: left;
+
     }
 
+
     .receipt-title {
+
       margin-bottom: 16px;
+
 
       text-align: center;
 
-      color: #c77759;
+
+      color:
+        #c77759;
+
 
       font-size: 0.77rem;
+
+
       font-weight: 850;
+
 
       text-transform: uppercase;
 
+
       letter-spacing: 2px;
+
     }
 
+
     .receipt-row {
+
       display: flex;
+
 
       justify-content:
         space-between;
 
+
       gap: 25px;
 
-      padding: 12px 0;
+
+      padding:
+        12px
+        0;
+
 
       border-bottom:
         1px solid
         #f0ded5;
+
     }
+
 
     .receipt-row:last-child {
+
       border-bottom: none;
+
     }
+
 
     .receipt-label {
-      color: #9b796c;
+
+      color:
+        #9b796c;
+
     }
 
+
     .receipt-value {
+
       max-width: 65%;
+
 
       font-weight: 750;
 
-      color: #4c3b35;
+
+      color:
+        #4c3b35;
+
 
       text-align: right;
+
     }
 
+
     .final-message {
+
       margin-bottom: 20px;
+
 
       padding: 18px;
 
+
       border-radius: 18px;
+
 
       background:
         var(--pink-soft);
 
+
       color:
         var(--pink-dark);
 
+
       font-weight: 750;
 
+
       line-height: 1.55;
+
     }
+
 
 
     /* =========================================
@@ -812,28 +1702,44 @@
     ========================================= */
 
     .confetti {
+
       position: fixed;
+
 
       top: -20px;
 
+
       width: 10px;
+
       height: 14px;
+
 
       z-index: 999;
 
+
       pointer-events: none;
 
+
       animation:
-        fall linear forwards;
+        fall
+        linear
+        forwards;
+
     }
 
+
     @keyframes fall {
+
       to {
+
         transform:
           translateY(110vh)
           rotate(720deg);
+
       }
+
     }
+
 
 
     /* =========================================
@@ -843,66 +1749,148 @@
     @media (max-width: 650px) {
 
       body {
+
         padding: 12px;
+
       }
 
+
       .app {
+
         padding:
           38px
           19px;
 
+
         border-radius: 25px;
+
       }
+
 
       .choices {
+
         grid-template-columns:
-          repeat(2, 1fr);
+          repeat(
+            2,
+            1fr
+          );
+
       }
+
 
       .receipt-row {
-        flex-direction: column;
+
+        flex-direction:
+          column;
+
 
         gap: 5px;
+
       }
+
 
       .receipt-value {
+
         max-width: 100%;
 
+
         text-align: left;
+
       }
+
 
       .music-button {
+
         top: 10px;
+
         right: 10px;
 
+
         width: 43px;
+
         height: 43px;
+
       }
+
+
+      .book-card {
+
+        gap: 14px;
+
+
+        padding:
+          10px
+          3px;
+
+
+        min-height: 145px;
+
+      }
+
+
+      .book-cover {
+
+        width: 80px;
+
+        height: 118px;
+
+
+        padding:
+          10px
+          7px;
+
+      }
+
+
+      .book-cover-icon {
+
+        font-size: 1.6rem;
+
+      }
+
+
+      .book-cover-title {
+
+        font-size: 0.57rem;
+
+      }
+
+
+      .book-main-text {
+
+        font-size: 0.91rem;
+
+      }
+
     }
 
   </style>
+
 </head>
+
 
 
 <body>
 
+
   <!-- =========================================
        MUSIC
-
-       Your file is named:
-       music.wav
-  ========================================== -->
+       File must be named music.wav
+  ========================================= -->
 
   <audio
     id="bgMusic"
     loop
     preload="auto"
   >
+
     <source
       src="./music.wav"
       type="audio/wav"
     />
+
   </audio>
+
 
 
   <button
@@ -914,27 +1902,33 @@
   </button>
 
 
-  <!-- Funny floating food -->
+
+  <!-- Floating food -->
 
   <div class="floating-food f1">
     🍕
   </div>
 
+
   <div class="floating-food f2">
     🍓
   </div>
+
 
   <div class="floating-food f3">
     🍜
   </div>
 
+
   <div class="floating-food f4">
     🍔
   </div>
 
+
   <div class="floating-food f5">
     🍰
   </div>
+
 
 
   <main class="app">
@@ -949,62 +1943,168 @@
       id="screen1"
     >
 
+
       <div class="tag">
+
         Breaking News
+
       </div>
 
+
       <h1>
+
         Are you hungry? 👀
+
       </h1>
 
+
       <p class="subtitle">
+
         This is an extremely serious
         investigation conducted by highly
         trained food professionals.
+
       </p>
 
 
+
       <div class="button-row">
+
 
         <button
           class="btn primary"
           id="yesButton"
         >
+
           YESSS 🤤
+
         </button>
+
+
 
         <button
           class="btn secondary"
           id="noButton"
         >
+
           Nah, I'm good
+
         </button>
+
 
       </div>
 
+
+
+      <!-- BOOK CARD -->
 
       <div class="book-section">
 
+
         <div class="book-label">
-          📚 While we're here...
+
+          📚 Meanwhile, in the tiny library...
+
         </div>
+
 
         <div
-          class="book-recommendation"
-          data-book-display
+          class="book-card"
+          data-book-card
         >
-          Book recommendation loading...
+
+
+          <div
+            class="book-cover"
+            data-book-cover
+          >
+
+
+            <div
+              class="book-cover-icon"
+              data-book-icon
+            >
+
+              📖
+
+            </div>
+
+
+            <div
+              class="book-cover-title"
+              data-cover-title
+            >
+
+              BOOK
+
+            </div>
+
+
+          </div>
+
+
+
+          <div class="book-info">
+
+
+            <div
+              class="book-type"
+              data-book-type
+            >
+
+              Book Recommendation
+
+            </div>
+
+
+            <div
+              class="book-main-text"
+              data-book-text
+            >
+
+              Loading something bookish...
+
+            </div>
+
+
+            <div
+              class="book-source"
+              data-book-source
+            ></div>
+
+
+            <div class="book-timer">
+
+              <div
+                class="book-timer-fill"
+                data-book-timer
+              ></div>
+
+            </div>
+
+
+          </div>
+
+
         </div>
 
+
       </div>
+
 
 
       <div class="progress">
+
         <span class="dot active"></span>
+
         <span class="dot"></span>
+
         <span class="dot"></span>
+
         <span class="dot"></span>
+
       </div>
+
 
     </section>
 
@@ -1020,18 +2120,28 @@
       id="screen2"
     >
 
+
       <div class="tag">
+
         Question #1
+
       </div>
 
+
       <h2>
+
         What sounds good? 😋
+
       </h2>
 
+
       <p class="subtitle">
+
         Pick as many as you want.
         This is not the time for self-control.
+
       </p>
+
 
 
       <div
@@ -1039,110 +2149,140 @@
         id="foodChoices"
       >
 
+
         <div
           class="choice"
           data-value="Pizza 🍕"
         >
+
           <span class="emoji">
             🍕
           </span>
 
           Pizza
+
         </div>
+
 
 
         <div
           class="choice"
           data-value="Burgers 🍔"
         >
+
           <span class="emoji">
             🍔
           </span>
 
           Burgers
+
         </div>
+
 
 
         <div
           class="choice"
           data-value="Tacos 🌮"
         >
+
           <span class="emoji">
             🌮
           </span>
 
           Tacos
+
         </div>
+
 
 
         <div
           class="choice"
           data-value="Sushi 🍣"
         >
+
           <span class="emoji">
             🍣
           </span>
 
           Sushi
+
         </div>
+
 
 
         <div
           class="choice"
           data-value="Chicken / Wings 🍗"
         >
+
           <span class="emoji">
             🍗
           </span>
 
           Chicken
+
         </div>
+
 
 
         <div
           class="choice"
           data-value="Pasta 🍝"
         >
+
           <span class="emoji">
             🍝
           </span>
 
           Pasta
+
         </div>
+
 
 
         <div
           class="choice"
           data-value="Ramen / Noodles 🍜"
         >
+
           <span class="emoji">
             🍜
           </span>
 
           Noodles
+
         </div>
+
 
 
         <div
           class="choice"
           data-value="Dessert 🍰"
         >
+
           <span class="emoji">
             🍰
           </span>
 
           Dessert
+
         </div>
 
+
       </div>
+
 
 
       <label
         class="field-label"
         for="customFood"
       >
+
         Something else?
+
       </label>
+
+
 
       <input
         class="input"
@@ -1152,45 +2292,136 @@
       />
 
 
+
+      <!-- BOOK CARD -->
+
       <div class="book-section">
 
+
         <div class="book-label">
-          📖 Completely unsolicited book recommendation
+
+          📖 Today's completely unsolicited reading break
+
         </div>
 
+
         <div
-          class="book-recommendation"
-          data-book-display
-        ></div>
+          class="book-card"
+          data-book-card
+        >
+
+
+          <div
+            class="book-cover"
+            data-book-cover
+          >
+
+
+            <div
+              class="book-cover-icon"
+              data-book-icon
+            >
+              📖
+            </div>
+
+
+            <div
+              class="book-cover-title"
+              data-cover-title
+            >
+              BOOK
+            </div>
+
+
+          </div>
+
+
+
+          <div class="book-info">
+
+
+            <div
+              class="book-type"
+              data-book-type
+            >
+              Book Recommendation
+            </div>
+
+
+            <div
+              class="book-main-text"
+              data-book-text
+            >
+              Loading something bookish...
+            </div>
+
+
+            <div
+              class="book-source"
+              data-book-source
+            ></div>
+
+
+            <div class="book-timer">
+
+              <div
+                class="book-timer-fill"
+                data-book-timer
+              ></div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
 
       </div>
 
 
+
       <div class="button-row">
+
 
         <button
           class="btn back"
           onclick="goToScreen(1)"
         >
+
           ← Back
+
         </button>
+
+
 
         <button
           class="btn primary"
           id="foodNextButton"
         >
+
           These ones 😌 →
+
         </button>
 
+
       </div>
+
 
 
       <div class="progress">
+
         <span class="dot"></span>
+
         <span class="dot active"></span>
+
         <span class="dot"></span>
+
         <span class="dot"></span>
+
       </div>
+
 
     </section>
 
@@ -1206,27 +2437,41 @@
       id="screen3"
     >
 
+
       <div class="tag">
+
         Question #2
+
       </div>
 
+
       <h2>
+
         Where from? 📍
+
       </h2>
 
+
       <p class="subtitle">
+
         Restaurant, café, bakery,
         questionable taco truck...
         follow your heart.
+
       </p>
+
 
 
       <label
         class="field-label"
         for="restaurant"
       >
+
         Where do you want the food from?
+
       </label>
+
+
 
       <input
         class="input"
@@ -1236,45 +2481,136 @@
       />
 
 
+
+      <!-- BOOK CARD -->
+
       <div class="book-section">
 
+
         <div class="book-label">
-          📚 Book break
+
+          📚 A literary intermission while you decide
+
         </div>
 
+
         <div
-          class="book-recommendation"
-          data-book-display
-        ></div>
+          class="book-card"
+          data-book-card
+        >
+
+
+          <div
+            class="book-cover"
+            data-book-cover
+          >
+
+
+            <div
+              class="book-cover-icon"
+              data-book-icon
+            >
+              📖
+            </div>
+
+
+            <div
+              class="book-cover-title"
+              data-cover-title
+            >
+              BOOK
+            </div>
+
+
+          </div>
+
+
+
+          <div class="book-info">
+
+
+            <div
+              class="book-type"
+              data-book-type
+            >
+              Book Recommendation
+            </div>
+
+
+            <div
+              class="book-main-text"
+              data-book-text
+            >
+              Loading something bookish...
+            </div>
+
+
+            <div
+              class="book-source"
+              data-book-source
+            ></div>
+
+
+            <div class="book-timer">
+
+              <div
+                class="book-timer-fill"
+                data-book-timer
+              ></div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
 
       </div>
 
 
+
       <div class="button-row">
+
 
         <button
           class="btn back"
           onclick="goToScreen(2)"
         >
+
           ← Back
+
         </button>
+
+
 
         <button
           class="btn primary"
           id="restaurantNextButton"
         >
+
           That's the spot →
+
         </button>
 
+
       </div>
+
 
 
       <div class="progress">
+
         <span class="dot"></span>
+
         <span class="dot"></span>
+
         <span class="dot active"></span>
+
         <span class="dot"></span>
+
       </div>
+
 
     </section>
 
@@ -1290,41 +2626,60 @@
       id="screen4"
     >
 
+
       <div class="tag">
+
         Final Question
+
       </div>
 
+
       <h2>
+
         Okay, give me the details ✍️
+
       </h2>
 
+
       <p class="subtitle">
+
         Take your time here.
         No countdown. No pressure.
         The food committee is patiently taking notes.
+
       </p>
+
 
 
       <div class="notes-card">
 
+
         <strong>
+
           Examples of useful information:
+
         </strong>
+
 
         Size, flavor, toppings, drink,
         sauce, spice level, dessert,
         modifications, or anything else
         your stomach would like to formally request.
 
+
       </div>
+
 
 
       <label
         class="field-label"
         for="notes"
       >
+
         Your notes:
+
       </label>
+
 
 
       <textarea
@@ -1335,62 +2690,158 @@
       ></textarea>
 
 
+
       <div
         class="character-count"
         id="characterCount"
       >
+
         0 / 1200
+
       </div>
 
+
+
+      <!-- BOOK CARD -->
 
       <div class="book-section">
 
+
         <div class="book-label">
-          📖 While you think...
+
+          📖 While you carefully prepare this extremely serious food request...
+
         </div>
 
+
         <div
-          class="book-recommendation"
-          data-book-display
-        ></div>
+          class="book-card"
+          data-book-card
+        >
+
+
+          <div
+            class="book-cover"
+            data-book-cover
+          >
+
+
+            <div
+              class="book-cover-icon"
+              data-book-icon
+            >
+              📖
+            </div>
+
+
+            <div
+              class="book-cover-title"
+              data-cover-title
+            >
+              BOOK
+            </div>
+
+
+          </div>
+
+
+
+          <div class="book-info">
+
+
+            <div
+              class="book-type"
+              data-book-type
+            >
+              Book Recommendation
+            </div>
+
+
+            <div
+              class="book-main-text"
+              data-book-text
+            >
+              Loading something bookish...
+            </div>
+
+
+            <div
+              class="book-source"
+              data-book-source
+            ></div>
+
+
+            <div class="book-timer">
+
+              <div
+                class="book-timer-fill"
+                data-book-timer
+              ></div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
 
       </div>
 
 
+
       <div class="button-row">
+
 
         <button
           class="btn back"
           onclick="goToScreen(3)"
         >
+
           ← Back
+
         </button>
+
 
 
         <button
           class="btn primary"
           id="submitButton"
         >
+
           Submit my highly important request 💌
+
         </button>
 
+
       </div>
+
 
 
       <div
         class="loading"
         id="loading"
       >
+
         Filing paperwork with the Department of Snacks... 🍟
+
       </div>
+
 
 
       <div class="progress">
+
         <span class="dot"></span>
+
         <span class="dot"></span>
+
         <span class="dot"></span>
+
         <span class="dot active"></span>
+
       </div>
+
 
     </section>
 
@@ -1405,82 +2856,122 @@
       id="screen5"
     >
 
+
       <div class="final-emoji">
+
         🎉🍽️
+
       </div>
+
 
       <div class="tag">
+
         Officially Submitted
+
       </div>
 
+
       <h2>
+
         Excellent decisions were made.
+
       </h2>
 
+
       <p class="subtitle">
+
         Your request has been carefully
         reviewed by absolutely nobody
         and immediately approved.
+
       </p>
+
 
 
       <div class="receipt">
 
+
         <div class="receipt-title">
+
           Official Food Report
+
         </div>
+
 
 
         <div class="receipt-row">
 
+
           <span class="receipt-label">
+
             Food
+
           </span>
+
 
           <span
             class="receipt-value"
             id="resultFood"
           ></span>
 
+
         </div>
+
 
 
         <div class="receipt-row">
 
+
           <span class="receipt-label">
+
             From
+
           </span>
+
 
           <span
             class="receipt-value"
             id="resultRestaurant"
           ></span>
 
+
         </div>
+
 
 
         <div class="receipt-row">
 
+
           <span class="receipt-label">
+
             Important demands
+
           </span>
+
 
           <span
             class="receipt-value"
             id="resultNotes"
           ></span>
 
+
         </div>
 
+
       </div>
+
 
 
       <div class="final-message">
+
         Your food request has officially
         escaped into the internet. 🫡🍕
+
       </div>
 
+
     </section>
+
 
   </main>
 
@@ -1490,13 +2981,17 @@
 
     /* =========================================
        IMPORTANT — YOUR EMAIL
+    =========================================
 
-       Put the email address where you
-       want the answers delivered.
+       Replace the email below with the
+       email address where YOU want to
+       receive the food answers.
     ========================================= */
 
+
     const RECEIVER_EMAIL =
-      "YOUR_EMAIL@gmail.com";
+      "karla.angela.fernando@gmail.com";
+
 
 
     /* =========================================
@@ -1505,6 +3000,7 @@
 
     const selectedFoods =
       new Set();
+
 
 
     /* =========================================
@@ -1516,45 +3012,54 @@
         "bgMusic"
       );
 
+
     const musicButton =
       document.getElementById(
         "musicButton"
       );
+
 
     const yesButton =
       document.getElementById(
         "yesButton"
       );
 
+
     const noButton =
       document.getElementById(
         "noButton"
       );
+
 
     const foodNextButton =
       document.getElementById(
         "foodNextButton"
       );
 
+
     const restaurantNextButton =
       document.getElementById(
         "restaurantNextButton"
       );
+
 
     const submitButton =
       document.getElementById(
         "submitButton"
       );
 
+
     const loading =
       document.getElementById(
         "loading"
       );
 
+
     const notes =
       document.getElementById(
         "notes"
       );
+
 
     const characterCount =
       document.getElementById(
@@ -1562,73 +3067,102 @@
       );
 
 
+
     /* =========================================
        MUSIC
     ========================================= */
 
+
     music.volume = 0.5;
+
 
 
     function startMusic() {
 
+
       if (!music.paused) {
+
         return;
+
       }
 
 
       music
         .play()
+
         .then(() => {
+
 
           musicButton.textContent =
             "🔊";
 
+
         })
+
         .catch(error => {
+
 
           console.log(
             "Music waiting for interaction:",
             error
           );
 
+
         });
+
 
     }
 
 
+
     /*
-      Browsers usually require the
-      person to interact with the page
-      before audio can play.
+      Browsers generally require
+      a tap/click before audio begins.
     */
 
+
     document.addEventListener(
+
       "pointerdown",
+
       startMusic,
+
       {
         once: true
       }
+
     );
 
 
+
     musicButton.addEventListener(
+
       "click",
+
       event => {
+
 
         event.stopPropagation();
 
 
+
         if (music.paused) {
+
 
           music
             .play()
+
             .then(() => {
+
 
               musicButton.textContent =
                 "🔊";
 
+
             })
+
             .catch(error => {
+
 
               console.error(
                 "Music error:",
@@ -1640,32 +3174,44 @@
                 "The music couldn't play. Make sure music.wav is uploaded beside index.html."
               );
 
+
             });
+
 
         } else {
 
+
           music.pause();
+
 
           musicButton.textContent =
             "🔇";
 
+
         }
 
+
       }
+
     );
+
 
 
     /* =========================================
        SCREEN NAVIGATION
     ========================================= */
 
+
     function goToScreen(number) {
+
 
       document
         .querySelectorAll(
           ".screen"
         )
+
         .forEach(screen => {
+
 
           screen
             .classList
@@ -1673,46 +3219,64 @@
               "active"
             );
 
+
         });
+
 
 
       document
         .getElementById(
           "screen" + number
         )
+
         .classList
         .add(
           "active"
         );
 
 
+
       window.scrollTo({
+
         top: 0,
+
         behavior: "smooth"
+
       });
 
+
     }
+
 
 
     /* =========================================
        YES
     ========================================= */
 
+
     yesButton.addEventListener(
+
       "click",
+
       () => {
+
 
         startMusic();
 
+
         goToScreen(2);
 
+
       }
+
     );
+
 
 
     /* =========================================
        FUNNY NO BUTTON
     ========================================= */
+
 
     const noMessages = [
 
@@ -1739,12 +3303,17 @@
     ];
 
 
+
     let noClicks = 0;
 
 
+
     noButton.addEventListener(
+
       "click",
+
       () => {
+
 
         const index =
           Math.min(
@@ -1753,11 +3322,14 @@
           );
 
 
+
         noButton.textContent =
           noMessages[index];
 
 
+
         noClicks++;
+
 
 
         const scale =
@@ -1767,43 +3339,62 @@
           );
 
 
+
         yesButton.style.transform =
           `scale(${scale})`;
 
 
+
         if (noClicks >= 10) {
 
+
           setTimeout(
+
             () => {
+
 
               goToScreen(2);
 
+
             },
+
             700
+
           );
+
 
         }
 
+
       }
+
     );
+
 
 
     /* =========================================
        FOOD MULTI-SELECT
     ========================================= */
 
+
     document
       .querySelectorAll(
         "#foodChoices .choice"
       )
+
       .forEach(choice => {
 
+
         choice.addEventListener(
+
           "click",
+
           () => {
+
 
             const value =
               choice.dataset.value;
+
 
 
             if (
@@ -1812,9 +3403,11 @@
               )
             ) {
 
+
               selectedFoods.delete(
                 value
               );
+
 
               choice
                 .classList
@@ -1822,11 +3415,14 @@
                   "selected"
                 );
 
+
             } else {
+
 
               selectedFoods.add(
                 value
               );
+
 
               choice
                 .classList
@@ -1834,24 +3430,32 @@
                   "selected"
                 );
 
+
             }
 
+
           }
+
         );
 
+
       });
+
 
 
     /* =========================================
        BUILD FOOD LIST
     ========================================= */
 
+
     function getFoodList() {
+
 
       const foods =
         Array.from(
           selectedFoods
         );
+
 
 
       const customFood =
@@ -1863,59 +3467,81 @@
           .trim();
 
 
+
       if (customFood) {
+
 
         foods.push(
           customFood
         );
 
+
       }
+
 
 
       return foods;
 
+
     }
+
 
 
     /* =========================================
        NEXT AFTER FOOD
     ========================================= */
 
+
     foodNextButton.addEventListener(
+
       "click",
+
       () => {
+
 
         const foods =
           getFoodList();
+
 
 
         if (
           foods.length === 0
         ) {
 
+
           alert(
             "We cannot continue this investigation without food evidence. Pick something 😭"
           );
 
+
           return;
+
 
         }
 
 
+
         goToScreen(3);
 
+
       }
+
     );
+
 
 
     /* =========================================
        NEXT AFTER RESTAURANT
     ========================================= */
 
+
     restaurantNextButton
       .addEventListener(
+
         "click",
+
         () => {
+
 
           const restaurant =
             document
@@ -1926,173 +3552,799 @@
               .trim();
 
 
+
           if (!restaurant) {
+
 
             alert(
               "I need a restaurant first, detective. 🕵️"
             );
 
+
             return;
+
 
           }
 
 
+
           goToScreen(4);
 
+
         }
+
       );
+
 
 
     /* =========================================
        NOTES CHARACTER COUNTER
+    =========================================
 
        There is NO timer here.
 
-       They can stay on this page and
-       think for as long as they want.
+       They can take as long as they want.
     ========================================= */
 
+
     notes.addEventListener(
+
       "input",
+
       () => {
+
 
         characterCount.textContent =
           `${notes.value.length} / 1200`;
 
+
       }
+
     );
 
 
-    /* =========================================
-       BOOK RECOMMENDATIONS
 
-       These gently rotate every 4 seconds.
+    /* =========================================
+       BOOK QUOTES + RECOMMENDATIONS
+    =========================================
+
+       Every card remains for 7 seconds.
+
+       Quotes are kept to public-domain
+       classics. Modern books use original
+       recommendation descriptions.
     ========================================= */
 
-    const books = [
 
-      "📘 Atomic Habits — James Clear. For when saying “I'll start Monday” has gone on for 47 Mondays.",
+    const bookItems = [
 
-      "📕 The Alchemist — Paulo Coelho. Adventure, dreams, destiny... and significantly less paperwork than real life.",
 
-      "📗 The Seven Husbands of Evelyn Hugo — Taylor Jenkins Reid. Hollywood drama without personally ruining your own life.",
+      {
 
-      "📙 Project Hail Mary — Andy Weir. Science, space, survival, and a surprisingly lovable friendship.",
+        type:
+          "Classic Quote",
 
-      "📓 The Midnight Library — Matt Haig. For anyone who's ever wondered, “What if I had made that other choice?”",
 
-      "📘 The House in the Cerulean Sea — TJ Klune. Cozy, strange, sweet, and considerably less stressful than checking your email.",
+        title:
+          "Pride & Prejudice",
 
-      "📕 Tomorrow, and Tomorrow, and Tomorrow — Gabrielle Zevin. Games, friendship, ambition, and feelings. Lots of feelings.",
 
-      "📗 The Song of Achilles — Madeline Miller. Beautiful writing plus emotional damage at no additional charge.",
+        text:
+          "“There is no charm equal to tenderness of heart.”",
 
-      "📙 The Hitchhiker's Guide to the Galaxy — Douglas Adams. Space is weird. Humans are weirder.",
 
-      "📓 Remarkably Bright Creatures — Shelby Van Pelt. Come for the story, stay for the extremely intelligent octopus.",
+        source:
+          "Jane Austen — Pride and Prejudice",
 
-      "📘 The Book Thief — Markus Zusak. Beautiful, heartbreaking, and narrated by Death. Very cheerful résumé.",
 
-      "📕 Anxious People — Fredrik Backman. A hostage situation featuring people who are impressively bad at being criminals."
+        icon:
+          "🌷",
+
+
+        color:
+          "linear-gradient(145deg, #dc8fa5, #f5c3cf)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Book Recommendation",
+
+
+        title:
+          "Project Hail Mary",
+
+
+        text:
+          "Science, space, survival, and one unexpectedly wholesome friendship. Excellent if you like smart stories that are still fun.",
+
+
+        source:
+          "Project Hail Mary — Andy Weir",
+
+
+        icon:
+          "🚀",
+
+
+        color:
+          "linear-gradient(145deg, #375a7f, #76a9d5)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Classic Quote",
+
+
+        title:
+          "Alice",
+
+
+        text:
+          "“Curiouser and curiouser!”",
+
+
+        source:
+          "Lewis Carroll — Alice's Adventures in Wonderland",
+
+
+        icon:
+          "🐇",
+
+
+        color:
+          "linear-gradient(145deg, #78b7d0, #b9e4ef)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Book Recommendation",
+
+
+        title:
+          "Anxious People",
+
+
+        text:
+          "A robbery, a hostage situation, and a group of people who are impressively bad at behaving normally.",
+
+
+        source:
+          "Anxious People — Fredrik Backman",
+
+
+        icon:
+          "🏠",
+
+
+        color:
+          "linear-gradient(145deg, #dc9b57, #ffd68d)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Classic Quote",
+
+
+        title:
+          "Little Women",
+
+
+        text:
+          "“I am not afraid of storms, for I am learning how to sail my ship.”",
+
+
+        source:
+          "Louisa May Alcott — Little Women",
+
+
+        icon:
+          "⛵",
+
+
+        color:
+          "linear-gradient(145deg, #738c72, #aec8a5)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Book Recommendation",
+
+
+        title:
+          "Tomorrow³",
+
+
+        text:
+          "Friendship, creativity, video games, ambition, love, success, and the complicated business of growing up.",
+
+
+        source:
+          "Tomorrow, and Tomorrow, and Tomorrow — Gabrielle Zevin",
+
+
+        icon:
+          "🎮",
+
+
+        color:
+          "linear-gradient(145deg, #7168c8, #aca7ed)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Classic Quote",
+
+
+        title:
+          "Anne",
+
+
+        text:
+          "“Tomorrow is a new day with no mistakes in it yet.”",
+
+
+        source:
+          "L. M. Montgomery — Anne of Green Gables",
+
+
+        icon:
+          "🌿",
+
+
+        color:
+          "linear-gradient(145deg, #57976d, #a9d6af)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Book Recommendation",
+
+
+        title:
+          "Bright Creatures",
+
+
+        text:
+          "A warm mystery about grief, friendship, an aquarium, and an octopus who may be smarter than nearly everyone.",
+
+
+        source:
+          "Remarkably Bright Creatures — Shelby Van Pelt",
+
+
+        icon:
+          "🐙",
+
+
+        color:
+          "linear-gradient(145deg, #327b8d, #69c0ce)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Classic Quote",
+
+
+        title:
+          "Frankenstein",
+
+
+        text:
+          "“Nothing is so painful to the human mind as a great and sudden change.”",
+
+
+        source:
+          "Mary Shelley — Frankenstein",
+
+
+        icon:
+          "⚡",
+
+
+        color:
+          "linear-gradient(145deg, #384d48, #748d83)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Book Recommendation",
+
+
+        title:
+          "Cerulean Sea",
+
+
+        text:
+          "Cozy fantasy, found family, magical children, and enough warmth to qualify as emotional soup.",
+
+
+        source:
+          "The House in the Cerulean Sea — TJ Klune",
+
+
+        icon:
+          "🏝️",
+
+
+        color:
+          "linear-gradient(145deg, #3c94bd, #8ad7e6)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Classic Quote",
+
+
+        title:
+          "Jane Eyre",
+
+
+        text:
+          "“I would always rather be happy than dignified.”",
+
+
+        source:
+          "Charlotte Brontë — Jane Eyre",
+
+
+        icon:
+          "🕯️",
+
+
+        color:
+          "linear-gradient(145deg, #7d555c, #c6979f)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Book Recommendation",
+
+
+        title:
+          "Hitchhiker's Guide",
+
+
+        text:
+          "Perfect if you enjoy absurd humor, space adventures, existential nonsense, and towels being suspiciously important.",
+
+
+        source:
+          "The Hitchhiker's Guide to the Galaxy — Douglas Adams",
+
+
+        icon:
+          "🌌",
+
+
+        color:
+          "linear-gradient(145deg, #27364d, #6f81aa)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Classic Quote",
+
+
+        title:
+          "Sherlock Holmes",
+
+
+        text:
+          "“There is nothing more deceptive than an obvious fact.”",
+
+
+        source:
+          "Arthur Conan Doyle — The Boscombe Valley Mystery",
+
+
+        icon:
+          "🔎",
+
+
+        color:
+          "linear-gradient(145deg, #74583c, #ba9364)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Book Recommendation",
+
+
+        title:
+          "Evelyn Hugo",
+
+
+        text:
+          "Old Hollywood glamour, ambition, complicated love, questionable decisions, and enough drama to fuel several group chats.",
+
+
+        source:
+          "The Seven Husbands of Evelyn Hugo — Taylor Jenkins Reid",
+
+
+        icon:
+          "🎬",
+
+
+        color:
+          "linear-gradient(145deg, #2d865e, #78b78d)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Classic Quote",
+
+
+        title:
+          "Dracula",
+
+
+        text:
+          "“Listen to them—the children of the night. What music they make!”",
+
+
+        source:
+          "Bram Stoker — Dracula",
+
+
+        icon:
+          "🌙",
+
+
+        color:
+          "linear-gradient(145deg, #492c46, #915a7d)"
+
+      },
+
+
+
+      {
+
+        type:
+          "Book Recommendation",
+
+
+        title:
+          "Midnight Library",
+
+
+        text:
+          "A reflective story built around one big question: what might life look like if you had made different choices?",
+
+
+        source:
+          "The Midnight Library — Matt Haig",
+
+
+        icon:
+          "📚",
+
+
+        color:
+          "linear-gradient(145deg, #334f91, #758bd0)"
+
+      }
 
     ];
 
 
-    let bookIndex =
+
+    /* =========================================
+       BOOK ELEMENTS
+    ========================================= */
+
+
+    const bookCards =
+      document.querySelectorAll(
+        "[data-book-card]"
+      );
+
+
+
+    let currentBookIndex =
       Math.floor(
         Math.random() *
-        books.length
+        bookItems.length
       );
 
 
-    const bookDisplays =
-      document.querySelectorAll(
-        "[data-book-display]"
+
+    /* =========================================
+       DISPLAY BOOK
+    ========================================= */
+
+
+    function displayBook(
+      card,
+      item
+    ) {
+
+
+      const type =
+        card.querySelector(
+          "[data-book-type]"
+        );
+
+
+      const text =
+        card.querySelector(
+          "[data-book-text]"
+        );
+
+
+      const source =
+        card.querySelector(
+          "[data-book-source]"
+        );
+
+
+      const cover =
+        card.querySelector(
+          "[data-book-cover]"
+        );
+
+
+      const coverTitle =
+        card.querySelector(
+          "[data-cover-title]"
+        );
+
+
+      const icon =
+        card.querySelector(
+          "[data-book-icon]"
+        );
+
+
+      const timer =
+        card.querySelector(
+          "[data-book-timer]"
+        );
+
+
+
+      type.textContent =
+        item.type;
+
+
+
+      text.textContent =
+        item.text;
+
+
+
+      source.textContent =
+        item.source;
+
+
+
+      coverTitle.textContent =
+        item.title;
+
+
+
+      icon.textContent =
+        item.icon;
+
+
+
+      cover.style.background =
+        item.color;
+
+
+
+      /*
+        Restart timer bar.
+      */
+
+
+      timer.classList.remove(
+        "running"
       );
 
 
-    function updateBookDisplays() {
+      void timer.offsetWidth;
 
-      bookDisplays.forEach(
-        display => {
 
-          display.classList.add(
-            "fade"
-          );
-
-        }
+      timer.classList.add(
+        "running"
       );
 
-
-      setTimeout(
-        () => {
-
-          bookIndex =
-            (
-              bookIndex + 1
-            ) %
-            books.length;
-
-
-          bookDisplays.forEach(
-            display => {
-
-              display.textContent =
-                books[bookIndex];
-
-
-              display
-                .classList
-                .remove(
-                  "fade"
-                );
-
-            }
-          );
-
-        },
-        450
-      );
 
     }
 
 
-    /*
-      Give the first recommendation
-      immediately.
-    */
 
-    bookDisplays.forEach(
-      display => {
+    /* =========================================
+       FIRST BOOK
+    ========================================= */
 
-        display.textContent =
-          books[bookIndex];
+
+    bookCards.forEach(
+
+      card => {
+
+
+        displayBook(
+          card,
+          bookItems[currentBookIndex]
+        );
+
 
       }
+
     );
+
+
+
+    /* =========================================
+       CHANGE BOOK
+    ========================================= */
+
+
+    function changeBook() {
+
+
+      bookCards.forEach(
+
+        card => {
+
+
+          card.classList.add(
+            "fade"
+          );
+
+
+        }
+
+      );
+
+
+
+      /*
+        Gentle fade before swapping.
+      */
+
+
+      setTimeout(
+
+        () => {
+
+
+          currentBookIndex =
+            (
+              currentBookIndex + 1
+            ) %
+            bookItems.length;
+
+
+
+          const newBook =
+            bookItems[
+              currentBookIndex
+            ];
+
+
+
+          bookCards.forEach(
+
+            card => {
+
+
+              displayBook(
+                card,
+                newBook
+              );
+
+
+              card.classList.remove(
+                "fade"
+              );
+
+
+            }
+
+          );
+
+
+        },
+
+        650
+
+      );
+
+
+    }
+
 
 
     /*
-      Change every 4 seconds.
-      Slow enough to read comfortably.
+      Each quote / recommendation
+      stays visible for 7 seconds.
     */
 
+
     setInterval(
-      updateBookDisplays,
-      4000
+
+      changeBook,
+
+      7000
+
     );
+
 
 
     /* =========================================
        SUBMIT
     ========================================= */
 
+
     submitButton.addEventListener(
+
       "click",
+
       async () => {
+
 
         const foods =
           getFoodList();
+
 
 
         const restaurant =
@@ -2104,97 +4356,125 @@
             .trim();
 
 
+
         const noteText =
           notes
             .value
             .trim();
 
 
+
         /*
-          Check the email address.
+          Check email.
         */
+
 
         if (
           RECEIVER_EMAIL ===
           "YOUR_EMAIL@gmail.com"
         ) {
 
+
           alert(
-            "Before publishing, replace YOUR_EMAIL@gmail.com in the code with the email address that should receive the answers."
+            "Before publishing, replace YOUR_EMAIL@gmail.com in the code with the email address where you want to receive the answers."
           );
+
 
           return;
 
+
         }
+
 
 
         if (
           foods.length === 0
         ) {
 
+
           alert(
             "Somehow the food disappeared. Please pick something again 😭"
           );
 
+
           goToScreen(2);
 
+
           return;
+
 
         }
 
 
+
         if (!restaurant) {
+
 
           alert(
             "We lost the restaurant. Please add it again."
           );
 
+
           goToScreen(3);
+
 
           return;
 
+
         }
+
 
 
         submitButton.disabled =
           true;
 
 
+
         submitButton.textContent =
           "Sending... 💌";
+
 
 
         loading.style.display =
           "block";
 
 
+
         /*
-          This is what will be emailed
-          to you.
+          Information emailed to you.
         */
 
+
         const submission = {
+
 
           "🍕 Food Choices":
             foods.join(", "),
 
+
           "📍 Restaurant":
             restaurant,
+
 
           "✍️ Notes":
             noteText ||
             "No extra notes",
 
+
           "_subject":
             "🍕 New Food Request!",
+
 
           "_template":
             "table"
 
+
         };
 
 
+
         try {
+
 
           const response =
             await fetch(
@@ -2206,6 +4486,7 @@
                 method:
                   "POST",
 
+
                 headers: {
 
                   "Content-Type":
@@ -2215,6 +4496,7 @@
                     "application/json"
 
                 },
+
 
                 body:
                   JSON.stringify(
@@ -2226,19 +4508,23 @@
             );
 
 
+
           if (!response.ok) {
+
 
             throw new Error(
               "Submission failed"
             );
 
+
           }
 
 
+
           /*
-            Put their answers
-            on the final screen.
+            Final screen answers.
           */
+
 
           document
             .getElementById(
@@ -2248,12 +4534,14 @@
               foods.join(", ");
 
 
+
           document
             .getElementById(
               "resultRestaurant"
             )
             .textContent =
               restaurant;
+
 
 
           document
@@ -2265,17 +4553,24 @@
               "No extra notes";
 
 
+
           goToScreen(5);
+
 
 
           launchConfetti();
 
 
-        } catch (error) {
+        }
+
+
+        catch (error) {
+
 
           console.error(
             error
           );
+
 
 
           alert(
@@ -2283,30 +4578,42 @@
           );
 
 
-        } finally {
+        }
+
+
+        finally {
+
 
           submitButton.disabled =
             false;
+
 
 
           submitButton.textContent =
             "Submit my highly important request 💌";
 
 
+
           loading.style.display =
             "none";
 
+
         }
 
+
       }
+
     );
+
 
 
     /* =========================================
        CONFETTI
     ========================================= */
 
+
     function launchConfetti() {
+
 
       const colors = [
 
@@ -2325,11 +4632,13 @@
       ];
 
 
+
       for (
         let i = 0;
         i < 100;
         i++
       ) {
+
 
         const piece =
           document.createElement(
@@ -2337,15 +4646,18 @@
           );
 
 
+
         piece.classList.add(
           "confetti"
         );
+
 
 
         piece.style.left =
           Math.random() *
           100 +
           "vw";
+
 
 
         piece.style.backgroundColor =
@@ -2357,21 +4669,26 @@
           ];
 
 
+
         piece.style.animationDuration =
           (
             Math.random() *
             2 +
             2
-          ) +
+          )
+          +
           "s";
+
 
 
         piece.style.animationDelay =
           (
             Math.random() *
             0.8
-          ) +
+          )
+          +
           "s";
+
 
 
         document.body.appendChild(
@@ -2379,20 +4696,30 @@
         );
 
 
+
         setTimeout(
+
           () => {
+
 
             piece.remove();
 
+
           },
+
           4800
+
         );
 
+
       }
+
 
     }
 
   </script>
 
+
 </body>
+
 </html>
