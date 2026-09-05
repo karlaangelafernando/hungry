@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Are You Hungry? 🍕</title>
+  <title>Important Food Business 🍕</title>
 
   <style>
-    /* ==========================================
-       RESET
-    ========================================== */
+    /* =========================================
+       BASIC SETUP
+    ========================================= */
 
     * {
       box-sizing: border-box;
@@ -18,136 +18,172 @@
     }
 
     :root {
-      --pink: #ff6f91;
-      --pink-dark: #e85379;
-      --pink-light: #fff0f4;
-      --yellow: #ffd166;
-      --cream: #fffaf1;
-      --text: #3d3036;
-      --muted: #82747b;
+      --pink: #ff7f9f;
+      --pink-dark: #e95d82;
+      --pink-soft: #fff0f5;
+
+      --yellow: #ffd978;
+      --yellow-soft: #fff8dc;
+
+      --blue: #8fd3ff;
+      --blue-soft: #edf9ff;
+
+      --green: #92e6b8;
+
+      --text: #40353a;
+      --muted: #82777c;
+
+      --white: #ffffff;
     }
 
     body {
       min-height: 100vh;
+
       font-family:
-        Inter,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
 
-      color: var(--text);
-
       background:
-        radial-gradient(circle at 10% 15%, #ffc8d6 0%, transparent 28%),
-        radial-gradient(circle at 90% 85%, #ffe29a 0%, transparent 28%),
-        linear-gradient(135deg, #fff7f9, #fffaf0);
+        radial-gradient(
+          circle at 10% 10%,
+          #ffe3ec 0%,
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 90% 90%,
+          #fff0b8 0%,
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #fffafb,
+          #fffdf5
+        );
+
+      color: var(--text);
 
       display: flex;
       justify-content: center;
       align-items: center;
 
-      padding: 20px;
+      padding: 22px;
 
       overflow-x: hidden;
     }
 
 
-    /* ==========================================
-       FLOATING FOOD
-    ========================================== */
+    /* =========================================
+       BACKGROUND FOOD
+    ========================================= */
 
     .floating-food {
       position: fixed;
+
       pointer-events: none;
+
       z-index: 0;
 
-      font-size: clamp(1.8rem, 5vw, 3.2rem);
+      opacity: 0.14;
 
-      opacity: 0.16;
+      font-size: clamp(2rem, 5vw, 3.5rem);
 
-      animation: float 8s ease-in-out infinite;
+      animation:
+        floatFood 8s ease-in-out infinite;
     }
 
-    .food-1 {
-      top: 10%;
+    .f1 {
+      top: 8%;
       left: 5%;
     }
 
-    .food-2 {
+    .f2 {
       top: 15%;
-      right: 5%;
+      right: 6%;
       animation-delay: -2s;
     }
 
-    .food-3 {
-      bottom: 12%;
-      left: 8%;
+    .f3 {
+      bottom: 10%;
+      left: 7%;
       animation-delay: -4s;
     }
 
-    .food-4 {
-      bottom: 10%;
+    .f4 {
+      bottom: 8%;
       right: 8%;
       animation-delay: -6s;
     }
 
-    .food-5 {
+    .f5 {
       top: 5%;
       left: 48%;
       animation-delay: -3s;
     }
 
-    @keyframes float {
+    @keyframes floatFood {
       0%,
       100% {
-        transform: translateY(0) rotate(0deg);
+        transform:
+          translateY(0)
+          rotate(0deg);
       }
 
       50% {
-        transform: translateY(-25px) rotate(10deg);
+        transform:
+          translateY(-25px)
+          rotate(8deg);
       }
     }
 
 
-    /* ==========================================
-       APP
-    ========================================== */
+    /* =========================================
+       MAIN CARD
+    ========================================= */
 
     .app {
       position: relative;
+
       z-index: 2;
 
       width: 100%;
-      max-width: 720px;
+      max-width: 760px;
 
-      min-height: 560px;
+      min-height: 570px;
 
-      padding: 45px 35px;
+      padding: 45px 38px;
 
-      background: rgba(255, 255, 255, 0.94);
+      background:
+        rgba(255, 255, 255, 0.96);
 
-      border: 1px solid rgba(255, 255, 255, 0.9);
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.9);
+
       border-radius: 32px;
 
       box-shadow:
-        0 30px 80px rgba(87, 46, 60, 0.16);
-
-      backdrop-filter: blur(12px);
+        0 30px 80px
+        rgba(80, 55, 65, 0.13);
 
       text-align: center;
+
+      backdrop-filter: blur(12px);
     }
 
 
-    /* ==========================================
+    /* =========================================
        MUSIC BUTTON
-    ========================================== */
+    ========================================= */
 
-    .music-btn {
+    .music-button {
       position: fixed;
 
       top: 18px;
       right: 18px;
+
+      z-index: 50;
 
       width: 48px;
       height: 48px;
@@ -158,25 +194,27 @@
       background: white;
 
       box-shadow:
-        0 8px 25px rgba(72, 42, 52, 0.16);
+        0 8px 25px
+        rgba(60, 40, 48, 0.16);
 
       cursor: pointer;
 
-      font-size: 1.25rem;
+      font-size: 1.2rem;
 
-      z-index: 20;
-
-      transition: 0.2s ease;
+      transition:
+        transform 0.2s ease;
     }
 
-    .music-btn:hover {
-      transform: scale(1.08);
+    .music-button:hover {
+      transform:
+        scale(1.08)
+        rotate(4deg);
     }
 
 
-    /* ==========================================
+    /* =========================================
        TYPOGRAPHY
-    ========================================== */
+    ========================================= */
 
     .tag {
       display: inline-block;
@@ -187,34 +225,38 @@
 
       border-radius: 50px;
 
-      background: var(--pink-light);
+      background: var(--pink-soft);
 
       color: var(--pink-dark);
 
-      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 800;
 
       letter-spacing: 1.5px;
 
-      font-size: 0.75rem;
-      font-weight: 800;
+      text-transform: uppercase;
     }
 
     h1 {
-      margin-bottom: 16px;
-
-      font-size: clamp(2.3rem, 7vw, 4rem);
+      font-size:
+        clamp(2.3rem, 7vw, 4.1rem);
 
       line-height: 1.05;
+
+      margin-bottom: 16px;
     }
 
     h2 {
-      margin-bottom: 14px;
+      font-size:
+        clamp(1.8rem, 6vw, 2.8rem);
 
-      font-size: clamp(1.8rem, 6vw, 2.8rem);
+      line-height: 1.12;
+
+      margin-bottom: 14px;
     }
 
     .subtitle {
-      max-width: 530px;
+      max-width: 560px;
 
       margin:
         0 auto
@@ -223,31 +265,33 @@
       color: var(--muted);
 
       font-size: 1rem;
+
       line-height: 1.7;
     }
 
 
-    /* ==========================================
+    /* =========================================
        SCREENS
-    ========================================== */
+    ========================================= */
 
     .screen {
       display: none;
 
-      animation: appear 0.4s ease;
+      animation:
+        screenIn 0.4s ease;
     }
 
     .screen.active {
       display: block;
     }
 
-    @keyframes appear {
+    @keyframes screenIn {
       from {
         opacity: 0;
 
         transform:
-          translateY(15px)
-          scale(0.98);
+          translateY(12px)
+          scale(0.985);
       }
 
       to {
@@ -260,19 +304,18 @@
     }
 
 
-    /* ==========================================
+    /* =========================================
        BUTTONS
-    ========================================== */
+    ========================================= */
 
     button {
       font-family: inherit;
     }
 
-    .buttons {
+    .button-row {
       display: flex;
 
       justify-content: center;
-
       align-items: center;
 
       flex-wrap: wrap;
@@ -283,9 +326,9 @@
     .btn {
       border: none;
 
-      padding: 15px 25px;
+      border-radius: 17px;
 
-      border-radius: 16px;
+      padding: 15px 25px;
 
       cursor: pointer;
 
@@ -294,49 +337,59 @@
 
       transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+        box-shadow 0.2s ease;
     }
 
     .btn:hover {
-      transform: translateY(-3px);
+      transform:
+        translateY(-3px);
     }
 
-    .primary-btn {
+    .primary {
       color: white;
 
       background:
         linear-gradient(
           135deg,
           var(--pink),
-          #ff8fab
+          #ff9bb4
         );
 
       box-shadow:
-        0 10px 25px rgba(255, 111, 145, 0.28);
+        0 10px 25px
+        rgba(255, 127, 159, 0.28);
     }
 
-    .primary-btn:hover {
+    .primary:hover {
       box-shadow:
-        0 15px 30px rgba(255, 111, 145, 0.4);
+        0 15px 30px
+        rgba(255, 127, 159, 0.38);
     }
 
-    .secondary-btn {
-      color: #62565c;
+    .secondary {
+      background: #f4eff1;
 
-      background: #f3eef0;
+      color: #655a5f;
     }
 
-    .back-btn {
-      color: #83747b;
-
+    .back {
       background: transparent;
+
+      color: #8b7e84;
+    }
+
+    .btn:disabled {
+      opacity: 0.55;
+
+      cursor: not-allowed;
+
+      transform: none;
     }
 
 
-    /* ==========================================
-       FOOD GRID
-    ========================================== */
+    /* =========================================
+       FOOD CHOICES
+    ========================================= */
 
     .choices {
       display: grid;
@@ -346,13 +399,11 @@
 
       gap: 12px;
 
-      margin: 25px 0;
+      margin: 26px 0;
     }
 
     .choice {
       padding: 18px 8px;
-
-      background: white;
 
       border:
         2px solid
@@ -360,34 +411,46 @@
 
       border-radius: 20px;
 
-      cursor: pointer;
+      background: white;
 
-      color: #55474d;
+      cursor: pointer;
 
       font-weight: 750;
 
-      transition: 0.2s ease;
+      color: #55494e;
 
       user-select: none;
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
     }
 
     .choice:hover {
-      transform: translateY(-4px);
+      transform:
+        translateY(-4px);
 
-      border-color: #ffb3c3;
+      border-color:
+        #ffbacb;
 
-      background: #fffafb;
+      background:
+        #fffafb;
     }
 
     .choice.selected {
-      border-color: var(--pink);
+      transform:
+        translateY(-3px);
 
-      background: var(--pink-light);
+      border-color:
+        var(--pink);
+
+      background:
+        var(--pink-soft);
 
       box-shadow:
-        0 8px 22px rgba(255, 111, 145, 0.16);
-
-      transform: translateY(-3px);
+        0 8px 20px
+        rgba(255, 127, 159, 0.15);
     }
 
     .emoji {
@@ -395,80 +458,197 @@
 
       margin-bottom: 8px;
 
-      font-size: 2.2rem;
+      font-size: 2.25rem;
     }
 
 
-    /* ==========================================
+    /* =========================================
        INPUTS
-    ========================================== */
+    ========================================= */
 
-    .input {
-      width: 100%;
-
-      margin:
-        5px 0
-        18px;
-
-      padding: 16px 18px;
-
-      border:
-        2px solid
-        #eee3e7;
-
-      border-radius: 16px;
-
-      outline: none;
-
-      font-family: inherit;
-
-      font-size: 1rem;
-
-      color: var(--text);
-
-      background: white;
-
-      transition: 0.2s ease;
-    }
-
-    .input:focus {
-      border-color: #ff8fab;
-
-      box-shadow:
-        0 0 0 4px
-        rgba(255, 143, 171, 0.1);
-    }
-
-    textarea.input {
-      min-height: 115px;
-
-      resize: vertical;
-    }
-
-    .input-label {
+    .field-label {
       display: block;
 
-      margin-top: 15px;
-      margin-bottom: 8px;
+      margin:
+        14px 0
+        8px;
 
       text-align: left;
 
       font-weight: 750;
     }
 
-    .helper {
-      margin-top: -9px;
-      margin-bottom: 20px;
+    .input {
+      width: 100%;
 
-      color: #a2949b;
+      padding: 16px 18px;
+
+      border:
+        2px solid
+        #eee5e8;
+
+      border-radius: 17px;
+
+      outline: none;
+
+      background: white;
+
+      color: var(--text);
+
+      font-family: inherit;
+      font-size: 1rem;
+
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .input:focus {
+      border-color:
+        #ff9bb4;
+
+      box-shadow:
+        0 0 0 4px
+        rgba(255, 127, 159, 0.1);
+    }
+
+    textarea.input {
+      min-height: 210px;
+
+      resize: vertical;
+
+      line-height: 1.6;
+    }
+
+    .helper {
+      margin-top: 9px;
+
+      color: #9d9096;
 
       font-size: 0.85rem;
+
+      text-align: left;
     }
 
 
-    /* ==========================================
+    /* =========================================
+       NOTES
+    ========================================= */
+
+    .notes-card {
+      padding: 20px;
+
+      margin-bottom: 20px;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fff8dc,
+          #fffdf3
+        );
+
+      border:
+        1px solid
+        #f7e8a8;
+
+      text-align: left;
+    }
+
+    .notes-card strong {
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: #8a6c16;
+    }
+
+    .character-count {
+      margin-top: 7px;
+
+      text-align: right;
+
+      color: #aaa0a4;
+
+      font-size: 0.82rem;
+    }
+
+
+    /* =========================================
+       BOOK RECOMMENDATIONS
+    ========================================= */
+
+    .book-section {
+      margin:
+        24px auto
+        27px;
+
+      padding: 18px 20px;
+
+      max-width: 590px;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue-soft),
+          #f7fcff
+        );
+
+      border:
+        1px solid
+        #ccecff;
+
+      overflow: hidden;
+    }
+
+    .book-label {
+      color: #5296bd;
+
+      font-size: 0.75rem;
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.3px;
+
+      margin-bottom: 8px;
+    }
+
+    .book-recommendation {
+      min-height: 55px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      color: #405b69;
+
+      font-weight: 700;
+
+      line-height: 1.5;
+
+      opacity: 1;
+
+      transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
+    }
+
+    .book-recommendation.fade {
+      opacity: 0;
+
+      transform:
+        translateY(7px);
+    }
+
+
+    /* =========================================
        PROGRESS
-    ========================================== */
+    ========================================= */
 
     .progress {
       display: flex;
@@ -486,9 +666,8 @@
 
       border-radius: 50%;
 
-      background: #eadfe3;
-
-      transition: 0.2s;
+      background:
+        #eadfe3;
     }
 
     .dot.active {
@@ -496,46 +675,51 @@
 
       border-radius: 10px;
 
-      background: var(--pink);
+      background:
+        var(--pink);
     }
 
 
-    /* ==========================================
+    /* =========================================
        LOADING
-    ========================================== */
+    ========================================= */
 
     .loading {
       display: none;
 
-      margin-top: 15px;
+      margin-top: 16px;
 
       color: var(--pink-dark);
 
-      font-size: 0.9rem;
       font-weight: 700;
+
+      font-size: 0.9rem;
     }
 
 
-    /* ==========================================
-       FINAL RESULT
-    ========================================== */
+    /* =========================================
+       FINAL SCREEN
+    ========================================= */
 
     .final-emoji {
-      margin-bottom: 12px;
-
       font-size: 5rem;
 
-      animation: bounce 1.2s infinite;
+      margin-bottom: 12px;
+
+      animation:
+        bounce 1.2s infinite;
     }
 
     @keyframes bounce {
       0%,
       100% {
-        transform: translateY(0);
+        transform:
+          translateY(0);
       }
 
       50% {
-        transform: translateY(-9px);
+        transform:
+          translateY(-9px);
       }
     }
 
@@ -548,9 +732,10 @@
         2px dashed
         #ffc6a8;
 
-      border-radius: 20px;
+      border-radius: 22px;
 
-      background: #fff9f4;
+      background:
+        #fff9f4;
 
       text-align: left;
     }
@@ -558,30 +743,31 @@
     .receipt-title {
       margin-bottom: 16px;
 
-      color: #c37255;
-
       text-align: center;
+
+      color: #c77759;
+
+      font-size: 0.77rem;
+      font-weight: 850;
 
       text-transform: uppercase;
 
       letter-spacing: 2px;
-
-      font-size: 0.75rem;
-      font-weight: 800;
     }
 
     .receipt-row {
       display: flex;
 
-      justify-content: space-between;
+      justify-content:
+        space-between;
 
       gap: 25px;
 
-      padding: 11px 0;
+      padding: 12px 0;
 
       border-bottom:
         1px solid
-        #f1dfd5;
+        #f0ded5;
     }
 
     .receipt-row:last-child {
@@ -589,39 +775,41 @@
     }
 
     .receipt-label {
-      color: #9a776a;
+      color: #9b796c;
     }
 
     .receipt-value {
       max-width: 65%;
 
-      color: #4b3934;
+      font-weight: 750;
+
+      color: #4c3b35;
 
       text-align: right;
-
-      font-weight: 750;
     }
 
     .final-message {
       margin-bottom: 20px;
 
-      padding: 17px;
+      padding: 18px;
 
-      border-radius: 16px;
+      border-radius: 18px;
 
-      background: var(--pink-light);
+      background:
+        var(--pink-soft);
 
-      color: var(--pink-dark);
+      color:
+        var(--pink-dark);
 
       font-weight: 750;
 
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
 
-    /* ==========================================
+    /* =========================================
        CONFETTI
-    ========================================== */
+    ========================================= */
 
     .confetti {
       position: fixed;
@@ -648,18 +836,17 @@
     }
 
 
-    /* ==========================================
+    /* =========================================
        MOBILE
-    ========================================== */
+    ========================================= */
 
     @media (max-width: 650px) {
+
       body {
         padding: 12px;
       }
 
       .app {
-        min-height: 520px;
-
         padding:
           38px
           19px;
@@ -670,10 +857,6 @@
       .choices {
         grid-template-columns:
           repeat(2, 1fr);
-      }
-
-      .choice {
-        padding: 16px 8px;
       }
 
       .receipt-row {
@@ -688,57 +871,78 @@
         text-align: left;
       }
 
-      .music-btn {
-        width: 42px;
-        height: 42px;
-
+      .music-button {
         top: 10px;
         right: 10px;
+
+        width: 43px;
+        height: 43px;
       }
     }
+
   </style>
 </head>
 
 
 <body>
 
-  <!-- ========================================
+  <!-- =========================================
        MUSIC
 
-       Put "music.wav" in the SAME folder
-       as index.html
-  ========================================= -->
+       Your file is named:
+       music.wav
+  ========================================== -->
 
   <audio
     id="bgMusic"
-    src="music.wav"
     loop
     preload="auto"
-  ></audio>
+  >
+    <source
+      src="./music.wav"
+      type="audio/wav"
+    />
+  </audio>
+
 
   <button
-    class="music-btn"
-    id="musicBtn"
-    title="Music"
+    id="musicButton"
+    class="music-button"
+    title="Play / pause music"
   >
     🔇
   </button>
 
 
-  <!-- Floating decorations -->
+  <!-- Funny floating food -->
 
-  <div class="floating-food food-1">🍕</div>
-  <div class="floating-food food-2">🍓</div>
-  <div class="floating-food food-3">🍜</div>
-  <div class="floating-food food-4">🍔</div>
-  <div class="floating-food food-5">🍰</div>
+  <div class="floating-food f1">
+    🍕
+  </div>
+
+  <div class="floating-food f2">
+    🍓
+  </div>
+
+  <div class="floating-food f3">
+    🍜
+  </div>
+
+  <div class="floating-food f4">
+    🍔
+  </div>
+
+  <div class="floating-food f5">
+    🍰
+  </div>
 
 
   <main class="app">
 
-    <!-- ========================================
+
+    <!-- =====================================
          SCREEN 1
-    ========================================= -->
+    ====================================== -->
 
     <section
       class="screen active"
@@ -746,7 +950,7 @@
     >
 
       <div class="tag">
-        Very Important Question
+        Breaking News
       </div>
 
       <h1>
@@ -754,26 +958,43 @@
       </h1>
 
       <p class="subtitle">
-        I need you to answer a few extremely
-        important questions. Your stomach
-        depends on it.
+        This is an extremely serious
+        investigation conducted by highly
+        trained food professionals.
       </p>
 
-      <div class="buttons">
+
+      <div class="button-row">
 
         <button
-          class="btn primary-btn"
-          id="yesBtn"
+          class="btn primary"
+          id="yesButton"
         >
           YESSS 🤤
         </button>
 
         <button
-          class="btn secondary-btn"
-          id="noBtn"
+          class="btn secondary"
+          id="noButton"
         >
-          Not really
+          Nah, I'm good
         </button>
+
+      </div>
+
+
+      <div class="book-section">
+
+        <div class="book-label">
+          📚 While we're here...
+        </div>
+
+        <div
+          class="book-recommendation"
+          data-book-display
+        >
+          Book recommendation loading...
+        </div>
 
       </div>
 
@@ -782,15 +1003,17 @@
         <span class="dot active"></span>
         <span class="dot"></span>
         <span class="dot"></span>
+        <span class="dot"></span>
       </div>
 
     </section>
 
 
-    <!-- ========================================
+
+    <!-- =====================================
          SCREEN 2
-         MULTIPLE FOOD SELECTION
-    ========================================= -->
+         FOOD
+    ====================================== -->
 
     <section
       class="screen"
@@ -798,16 +1021,16 @@
     >
 
       <div class="tag">
-        The Important Part
+        Question #1
       </div>
 
       <h2>
-        What do you want? 😋
+        What sounds good? 😋
       </h2>
 
       <p class="subtitle">
         Pick as many as you want.
-        Nobody is judging you here.
+        This is not the time for self-control.
       </p>
 
 
@@ -820,7 +1043,10 @@
           class="choice"
           data-value="Pizza 🍕"
         >
-          <span class="emoji">🍕</span>
+          <span class="emoji">
+            🍕
+          </span>
+
           Pizza
         </div>
 
@@ -829,7 +1055,10 @@
           class="choice"
           data-value="Burgers 🍔"
         >
-          <span class="emoji">🍔</span>
+          <span class="emoji">
+            🍔
+          </span>
+
           Burgers
         </div>
 
@@ -838,7 +1067,10 @@
           class="choice"
           data-value="Tacos 🌮"
         >
-          <span class="emoji">🌮</span>
+          <span class="emoji">
+            🌮
+          </span>
+
           Tacos
         </div>
 
@@ -847,7 +1079,10 @@
           class="choice"
           data-value="Sushi 🍣"
         >
-          <span class="emoji">🍣</span>
+          <span class="emoji">
+            🍣
+          </span>
+
           Sushi
         </div>
 
@@ -856,7 +1091,10 @@
           class="choice"
           data-value="Chicken / Wings 🍗"
         >
-          <span class="emoji">🍗</span>
+          <span class="emoji">
+            🍗
+          </span>
+
           Chicken
         </div>
 
@@ -865,7 +1103,10 @@
           class="choice"
           data-value="Pasta 🍝"
         >
-          <span class="emoji">🍝</span>
+          <span class="emoji">
+            🍝
+          </span>
+
           Pasta
         </div>
 
@@ -874,7 +1115,10 @@
           class="choice"
           data-value="Ramen / Noodles 🍜"
         >
-          <span class="emoji">🍜</span>
+          <span class="emoji">
+            🍜
+          </span>
+
           Noodles
         </div>
 
@@ -883,7 +1127,10 @@
           class="choice"
           data-value="Dessert 🍰"
         >
-          <span class="emoji">🍰</span>
+          <span class="emoji">
+            🍰
+          </span>
+
           Dessert
         </div>
 
@@ -891,7 +1138,7 @@
 
 
       <label
-        class="input-label"
+        class="field-label"
         for="customFood"
       >
         Something else?
@@ -899,26 +1146,40 @@
 
       <input
         class="input"
-        type="text"
         id="customFood"
-        placeholder="Fries, cookies, boba, steak..."
+        type="text"
+        placeholder="Boba, steak, fries, cookies..."
       />
 
 
-      <div class="buttons">
+      <div class="book-section">
+
+        <div class="book-label">
+          📖 Completely unsolicited book recommendation
+        </div>
+
+        <div
+          class="book-recommendation"
+          data-book-display
+        ></div>
+
+      </div>
+
+
+      <div class="button-row">
 
         <button
-          class="btn back-btn"
+          class="btn back"
           onclick="goToScreen(1)"
         >
           ← Back
         </button>
 
         <button
-          class="btn primary-btn"
-          id="foodNextBtn"
+          class="btn primary"
+          id="foodNextButton"
         >
-          I have chosen 😌 →
+          These ones 😌 →
         </button>
 
       </div>
@@ -928,15 +1189,17 @@
         <span class="dot"></span>
         <span class="dot active"></span>
         <span class="dot"></span>
+        <span class="dot"></span>
       </div>
 
     </section>
 
 
-    <!-- ========================================
+
+    <!-- =====================================
          SCREEN 3
-         WHERE + EXTRAS
-    ========================================= -->
+         RESTAURANT
+    ====================================== -->
 
     <section
       class="screen"
@@ -944,80 +1207,186 @@
     >
 
       <div class="tag">
-        Final Investigation
+        Question #2
       </div>
 
       <h2>
-        Okay... from where? 👀
+        Where from? 📍
       </h2>
 
       <p class="subtitle">
-        Pick your restaurant, café,
-        bakery, food spot, or wherever
-        you're craving.
+        Restaurant, café, bakery,
+        questionable taco truck...
+        follow your heart.
       </p>
 
 
       <label
-        class="input-label"
+        class="field-label"
         for="restaurant"
       >
-        Where do you want it from? 📍
+        Where do you want the food from?
       </label>
 
       <input
         class="input"
-        type="text"
         id="restaurant"
-        placeholder="Restaurant or place..."
+        type="text"
+        placeholder="Type the restaurant or place..."
       />
 
 
-      <label
-        class="input-label"
-        for="specialRequest"
-      >
-        Anything specific you want? ✍️
-      </label>
+      <div class="book-section">
 
-      <textarea
-        class="input"
-        id="specialRequest"
-        placeholder="Example: spicy chicken sandwich, large fries, Oreo milkshake, extra sauce..."
-      ></textarea>
+        <div class="book-label">
+          📚 Book break
+        </div>
 
-      <p class="helper">
-        Be specific. This is your chance. 😂
-      </p>
+        <div
+          class="book-recommendation"
+          data-book-display
+        ></div>
+
+      </div>
 
 
-      <div class="buttons">
+      <div class="button-row">
 
         <button
-          class="btn back-btn"
+          class="btn back"
           onclick="goToScreen(2)"
         >
           ← Back
         </button>
 
         <button
-          class="btn primary-btn"
-          id="submitBtn"
+          class="btn primary"
+          id="restaurantNextButton"
         >
-          That's my answer 💌
+          That's the spot →
         </button>
 
       </div>
+
+
+      <div class="progress">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot active"></span>
+        <span class="dot"></span>
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         SCREEN 4
+         NOTES
+    ====================================== -->
+
+    <section
+      class="screen"
+      id="screen4"
+    >
+
+      <div class="tag">
+        Final Question
+      </div>
+
+      <h2>
+        Okay, give me the details ✍️
+      </h2>
+
+      <p class="subtitle">
+        Take your time here.
+        No countdown. No pressure.
+        The food committee is patiently taking notes.
+      </p>
+
+
+      <div class="notes-card">
+
+        <strong>
+          Examples of useful information:
+        </strong>
+
+        Size, flavor, toppings, drink,
+        sauce, spice level, dessert,
+        modifications, or anything else
+        your stomach would like to formally request.
+
+      </div>
+
+
+      <label
+        class="field-label"
+        for="notes"
+      >
+        Your notes:
+      </label>
+
+
+      <textarea
+        class="input"
+        id="notes"
+        maxlength="1200"
+        placeholder="Example: Spicy chicken sandwich, large fries, lemonade, extra sauce... and maybe something sweet 👀"
+      ></textarea>
+
+
+      <div
+        class="character-count"
+        id="characterCount"
+      >
+        0 / 1200
+      </div>
+
+
+      <div class="book-section">
+
+        <div class="book-label">
+          📖 While you think...
+        </div>
+
+        <div
+          class="book-recommendation"
+          data-book-display
+        ></div>
+
+      </div>
+
+
+      <div class="button-row">
+
+        <button
+          class="btn back"
+          onclick="goToScreen(3)"
+        >
+          ← Back
+        </button>
+
+
+        <button
+          class="btn primary"
+          id="submitButton"
+        >
+          Submit my highly important request 💌
+        </button>
+
+      </div>
+
 
       <div
         class="loading"
         id="loading"
       >
-        Sending your food request... 🍕
+        Filing paperwork with the Department of Snacks... 🍟
       </div>
 
 
       <div class="progress">
+        <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot"></span>
         <span class="dot active"></span>
@@ -1026,44 +1395,46 @@
     </section>
 
 
-    <!-- ========================================
+
+    <!-- =====================================
          FINAL SCREEN
-    ========================================= -->
+    ====================================== -->
 
     <section
       class="screen"
-      id="screen4"
+      id="screen5"
     >
 
       <div class="final-emoji">
-        🍽️
+        🎉🍽️
       </div>
 
       <div class="tag">
-        Request Received
+        Officially Submitted
       </div>
 
       <h2>
-        Excellent choice. 😌
+        Excellent decisions were made.
       </h2>
 
       <p class="subtitle">
-        Your extremely important food request
-        has officially been submitted.
+        Your request has been carefully
+        reviewed by absolutely nobody
+        and immediately approved.
       </p>
 
 
       <div class="receipt">
 
         <div class="receipt-title">
-          Your Food Wishlist
+          Official Food Report
         </div>
 
 
         <div class="receipt-row">
 
           <span class="receipt-label">
-            I want
+            Food
           </span>
 
           <span
@@ -1091,12 +1462,12 @@
         <div class="receipt-row">
 
           <span class="receipt-label">
-            Specific request
+            Important demands
           </span>
 
           <span
             class="receipt-value"
-            id="resultRequest"
+            id="resultNotes"
           ></span>
 
         </div>
@@ -1105,8 +1476,8 @@
 
 
       <div class="final-message">
-        Perfect. Your answers have been
-        delivered to the food department. 💌😌
+        Your food request has officially
+        escaped into the internet. 🫡🍕
       </div>
 
     </section>
@@ -1114,126 +1485,169 @@
   </main>
 
 
+
   <script>
 
-    /* ==========================================
-       IMPORTANT
+    /* =========================================
+       IMPORTANT — YOUR EMAIL
 
-       CHANGE THIS TO YOUR EMAIL ADDRESS.
-    ========================================== */
+       Put the email address where you
+       want the answers delivered.
+    ========================================= */
 
     const RECEIVER_EMAIL =
-      "karla.angela.fernando@gmail.com";
+      "YOUR_EMAIL@gmail.com";
 
 
-    /* ==========================================
-       STATE
-    ========================================== */
+    /* =========================================
+       DATA
+    ========================================= */
 
-    const selectedFoods = new Set();
+    const selectedFoods =
+      new Set();
 
-    let musicStarted = false;
 
-
-    /* ==========================================
+    /* =========================================
        ELEMENTS
-    ========================================== */
+    ========================================= */
 
     const music =
-      document.getElementById("bgMusic");
+      document.getElementById(
+        "bgMusic"
+      );
 
-    const musicBtn =
-      document.getElementById("musicBtn");
+    const musicButton =
+      document.getElementById(
+        "musicButton"
+      );
 
-    const yesBtn =
-      document.getElementById("yesBtn");
+    const yesButton =
+      document.getElementById(
+        "yesButton"
+      );
 
-    const noBtn =
-      document.getElementById("noBtn");
+    const noButton =
+      document.getElementById(
+        "noButton"
+      );
 
-    const foodNextBtn =
-      document.getElementById("foodNextBtn");
+    const foodNextButton =
+      document.getElementById(
+        "foodNextButton"
+      );
 
-    const submitBtn =
-      document.getElementById("submitBtn");
+    const restaurantNextButton =
+      document.getElementById(
+        "restaurantNextButton"
+      );
+
+    const submitButton =
+      document.getElementById(
+        "submitButton"
+      );
 
     const loading =
-      document.getElementById("loading");
+      document.getElementById(
+        "loading"
+      );
+
+    const notes =
+      document.getElementById(
+        "notes"
+      );
+
+    const characterCount =
+      document.getElementById(
+        "characterCount"
+      );
 
 
-    /* ==========================================
+    /* =========================================
        MUSIC
-    ========================================== */
+    ========================================= */
 
-    music.volume = 0.55;
+    music.volume = 0.5;
 
 
-    async function startMusic() {
+    function startMusic() {
 
-      if (musicStarted) {
+      if (!music.paused) {
         return;
       }
 
-      try {
 
-        await music.play();
+      music
+        .play()
+        .then(() => {
 
-        musicStarted = true;
+          musicButton.textContent =
+            "🔊";
 
-        musicBtn.textContent = "🔊";
+        })
+        .catch(error => {
 
-      } catch (error) {
+          console.log(
+            "Music waiting for interaction:",
+            error
+          );
 
-        console.log(
-          "Music could not start yet:",
-          error
-        );
-
-      }
+        });
 
     }
 
 
     /*
-      Start music after the person's
-      first click anywhere on the page.
+      Browsers usually require the
+      person to interact with the page
+      before audio can play.
     */
 
     document.addEventListener(
-      "click",
+      "pointerdown",
       startMusic,
-      { once: true }
+      {
+        once: true
+      }
     );
 
 
-    musicBtn.addEventListener(
+    musicButton.addEventListener(
       "click",
-      async (event) => {
+      event => {
 
         event.stopPropagation();
 
 
         if (music.paused) {
 
-          try {
+          music
+            .play()
+            .then(() => {
 
-            await music.play();
+              musicButton.textContent =
+                "🔊";
 
-            musicStarted = true;
+            })
+            .catch(error => {
 
-            musicBtn.textContent = "🔊";
+              console.error(
+                "Music error:",
+                error
+              );
 
-          } catch (error) {
 
-            console.log(error);
+              alert(
+                "The music couldn't play. Make sure music.wav is uploaded beside index.html."
+              );
 
-          }
+            });
 
         } else {
 
           music.pause();
 
-          musicBtn.textContent = "🔇";
+          musicButton.textContent =
+            "🔇";
 
         }
 
@@ -1241,19 +1655,23 @@
     );
 
 
-    /* ==========================================
+    /* =========================================
        SCREEN NAVIGATION
-    ========================================== */
+    ========================================= */
 
     function goToScreen(number) {
 
       document
-        .querySelectorAll(".screen")
+        .querySelectorAll(
+          ".screen"
+        )
         .forEach(screen => {
 
-          screen.classList.remove(
-            "active"
-          );
+          screen
+            .classList
+            .remove(
+              "active"
+            );
 
         });
 
@@ -1262,7 +1680,8 @@
         .getElementById(
           "screen" + number
         )
-        .classList.add(
+        .classList
+        .add(
           "active"
         );
 
@@ -1275,13 +1694,15 @@
     }
 
 
-    /* ==========================================
+    /* =========================================
        YES
-    ========================================== */
+    ========================================= */
 
-    yesBtn.addEventListener(
+    yesButton.addEventListener(
       "click",
       () => {
+
+        startMusic();
 
         goToScreen(2);
 
@@ -1289,82 +1710,76 @@
     );
 
 
-    /* ==========================================
+    /* =========================================
        FUNNY NO BUTTON
-    ========================================== */
+    ========================================= */
 
     const noMessages = [
 
-      "Are you sure? 👀",
+      "Are you sure? 🤨",
 
-      "Really sure?",
+      "Like... REALLY sure?",
 
       "Not even fries? 🍟",
 
-      "Not even tacos? 🌮",
+      "What about pizza? 🍕",
 
-      "What about dessert? 🍰",
+      "Tacos?? 🌮",
 
-      "A milkshake?? 🥤",
+      "Dessert?? 🍰",
 
-      "I don't believe you 😂",
+      "A tiny snack perhaps? 👀",
 
-      "You should reconsider...",
+      "I remain unconvinced.",
 
-      "Okay just press YES 😭"
+      "This button is losing patience 😭",
+
+      "Okay fine. You're hungry."
 
     ];
 
 
-    let noCount = 0;
+    let noClicks = 0;
 
 
-    noBtn.addEventListener(
+    noButton.addEventListener(
       "click",
       () => {
 
         const index =
           Math.min(
-            noCount,
+            noClicks,
             noMessages.length - 1
           );
 
 
-        noBtn.textContent =
+        noButton.textContent =
           noMessages[index];
 
 
-        noCount++;
+        noClicks++;
 
-
-        /*
-          Slowly make YES more convincing.
-        */
 
         const scale =
           Math.min(
-            1 + noCount * 0.1,
-            1.7
+            1 + noClicks * 0.09,
+            1.65
           );
 
 
-        yesBtn.style.transform =
+        yesButton.style.transform =
           `scale(${scale})`;
 
 
-        /*
-          After enough resistance,
-          reveal the inevitable truth.
-        */
-
-        if (noCount >= 9) {
-
-          noBtn.textContent =
-            "Fine... maybe a little 😭";
+        if (noClicks >= 10) {
 
           setTimeout(
-            () => goToScreen(2),
-            600
+            () => {
+
+              goToScreen(2);
+
+            },
+            700
           );
 
         }
@@ -1373,9 +1788,9 @@
     );
 
 
-    /* ==========================================
-       MULTI-SELECT FOOD
-    ========================================== */
+    /* =========================================
+       FOOD MULTI-SELECT
+    ========================================= */
 
     document
       .querySelectorAll(
@@ -1391,27 +1806,33 @@
               choice.dataset.value;
 
 
-            /*
-              Toggle the selection.
-            */
-
             if (
-              selectedFoods.has(value)
+              selectedFoods.has(
+                value
+              )
             ) {
 
-              selectedFoods.delete(value);
-
-              choice.classList.remove(
-                "selected"
+              selectedFoods.delete(
+                value
               );
+
+              choice
+                .classList
+                .remove(
+                  "selected"
+                );
 
             } else {
 
-              selectedFoods.add(value);
-
-              choice.classList.add(
-                "selected"
+              selectedFoods.add(
+                value
               );
+
+              choice
+                .classList
+                .add(
+                  "selected"
+                );
 
             }
 
@@ -1421,51 +1842,9 @@
       });
 
 
-    /* ==========================================
-       FOOD NEXT BUTTON
-    ========================================== */
-
-    foodNextBtn.addEventListener(
-      "click",
-      () => {
-
-        const customFood =
-          document
-            .getElementById(
-              "customFood"
-            )
-            .value
-            .trim();
-
-
-        /*
-          They need at least one
-          selected or custom food.
-        */
-
-        if (
-          selectedFoods.size === 0 &&
-          !customFood
-        ) {
-
-          alert(
-            "You have to tell me what you want first 😭🍕"
-          );
-
-          return;
-
-        }
-
-
-        goToScreen(3);
-
-      }
-    );
-
-
-    /* ==========================================
+    /* =========================================
        BUILD FOOD LIST
-    ========================================== */
+    ========================================= */
 
     function getFoodList() {
 
@@ -1498,13 +1877,223 @@
     }
 
 
-    /* ==========================================
-       SUBMIT ANSWERS
-    ========================================== */
+    /* =========================================
+       NEXT AFTER FOOD
+    ========================================= */
 
-    submitBtn.addEventListener(
+    foodNextButton.addEventListener(
+      "click",
+      () => {
+
+        const foods =
+          getFoodList();
+
+
+        if (
+          foods.length === 0
+        ) {
+
+          alert(
+            "We cannot continue this investigation without food evidence. Pick something 😭"
+          );
+
+          return;
+
+        }
+
+
+        goToScreen(3);
+
+      }
+    );
+
+
+    /* =========================================
+       NEXT AFTER RESTAURANT
+    ========================================= */
+
+    restaurantNextButton
+      .addEventListener(
+        "click",
+        () => {
+
+          const restaurant =
+            document
+              .getElementById(
+                "restaurant"
+              )
+              .value
+              .trim();
+
+
+          if (!restaurant) {
+
+            alert(
+              "I need a restaurant first, detective. 🕵️"
+            );
+
+            return;
+
+          }
+
+
+          goToScreen(4);
+
+        }
+      );
+
+
+    /* =========================================
+       NOTES CHARACTER COUNTER
+
+       There is NO timer here.
+
+       They can stay on this page and
+       think for as long as they want.
+    ========================================= */
+
+    notes.addEventListener(
+      "input",
+      () => {
+
+        characterCount.textContent =
+          `${notes.value.length} / 1200`;
+
+      }
+    );
+
+
+    /* =========================================
+       BOOK RECOMMENDATIONS
+
+       These gently rotate every 4 seconds.
+    ========================================= */
+
+    const books = [
+
+      "📘 Atomic Habits — James Clear. For when saying “I'll start Monday” has gone on for 47 Mondays.",
+
+      "📕 The Alchemist — Paulo Coelho. Adventure, dreams, destiny... and significantly less paperwork than real life.",
+
+      "📗 The Seven Husbands of Evelyn Hugo — Taylor Jenkins Reid. Hollywood drama without personally ruining your own life.",
+
+      "📙 Project Hail Mary — Andy Weir. Science, space, survival, and a surprisingly lovable friendship.",
+
+      "📓 The Midnight Library — Matt Haig. For anyone who's ever wondered, “What if I had made that other choice?”",
+
+      "📘 The House in the Cerulean Sea — TJ Klune. Cozy, strange, sweet, and considerably less stressful than checking your email.",
+
+      "📕 Tomorrow, and Tomorrow, and Tomorrow — Gabrielle Zevin. Games, friendship, ambition, and feelings. Lots of feelings.",
+
+      "📗 The Song of Achilles — Madeline Miller. Beautiful writing plus emotional damage at no additional charge.",
+
+      "📙 The Hitchhiker's Guide to the Galaxy — Douglas Adams. Space is weird. Humans are weirder.",
+
+      "📓 Remarkably Bright Creatures — Shelby Van Pelt. Come for the story, stay for the extremely intelligent octopus.",
+
+      "📘 The Book Thief — Markus Zusak. Beautiful, heartbreaking, and narrated by Death. Very cheerful résumé.",
+
+      "📕 Anxious People — Fredrik Backman. A hostage situation featuring people who are impressively bad at being criminals."
+
+    ];
+
+
+    let bookIndex =
+      Math.floor(
+        Math.random() *
+        books.length
+      );
+
+
+    const bookDisplays =
+      document.querySelectorAll(
+        "[data-book-display]"
+      );
+
+
+    function updateBookDisplays() {
+
+      bookDisplays.forEach(
+        display => {
+
+          display.classList.add(
+            "fade"
+          );
+
+        }
+      );
+
+
+      setTimeout(
+        () => {
+
+          bookIndex =
+            (
+              bookIndex + 1
+            ) %
+            books.length;
+
+
+          bookDisplays.forEach(
+            display => {
+
+              display.textContent =
+                books[bookIndex];
+
+
+              display
+                .classList
+                .remove(
+                  "fade"
+                );
+
+            }
+          );
+
+        },
+        450
+      );
+
+    }
+
+
+    /*
+      Give the first recommendation
+      immediately.
+    */
+
+    bookDisplays.forEach(
+      display => {
+
+        display.textContent =
+          books[bookIndex];
+
+      }
+    );
+
+
+    /*
+      Change every 4 seconds.
+      Slow enough to read comfortably.
+    */
+
+    setInterval(
+      updateBookDisplays,
+      4000
+    );
+
+
+    /* =========================================
+       SUBMIT
+    ========================================= */
+
+    submitButton.addEventListener(
       "click",
       async () => {
+
+        const foods =
+          getFoodList();
+
 
         const restaurant =
           document
@@ -1515,25 +2104,36 @@
             .trim();
 
 
-        const specialRequest =
-          document
-            .getElementById(
-              "specialRequest"
-            )
+        const noteText =
+          notes
             .value
             .trim();
 
 
-        const foods =
-          getFoodList();
+        /*
+          Check the email address.
+        */
 
-
-        /* Validate food */
-
-        if (foods.length === 0) {
+        if (
+          RECEIVER_EMAIL ===
+          "YOUR_EMAIL@gmail.com"
+        ) {
 
           alert(
-            "You forgot to choose food 😭"
+            "Before publishing, replace YOUR_EMAIL@gmail.com in the code with the email address that should receive the answers."
+          );
+
+          return;
+
+        }
+
+
+        if (
+          foods.length === 0
+        ) {
+
+          alert(
+            "Somehow the food disappeared. Please pick something again 😭"
           );
 
           goToScreen(2);
@@ -1543,52 +2143,34 @@
         }
 
 
-        /* Validate restaurant */
-
         if (!restaurant) {
 
           alert(
-            "Tell me where you want it from first 👀"
+            "We lost the restaurant. Please add it again."
           );
+
+          goToScreen(3);
 
           return;
 
         }
 
 
-        /*
-          Make sure the owner replaced
-          the placeholder email.
-        */
-
-        if (
-          RECEIVER_EMAIL ===
-          "YOUR_EMAIL@example.com"
-        ) {
-
-          alert(
-            "The website owner still needs to add their email address in the code."
-          );
-
-          return;
-
-        }
+        submitButton.disabled =
+          true;
 
 
-        /* Disable button while sending */
-
-        submitBtn.disabled = true;
-
-        submitBtn.textContent =
+        submitButton.textContent =
           "Sending... 💌";
+
 
         loading.style.display =
           "block";
 
 
         /*
-          Data that YOU will receive
-          in your email.
+          This is what will be emailed
+          to you.
         */
 
         const submission = {
@@ -1596,12 +2178,12 @@
           "🍕 Food Choices":
             foods.join(", "),
 
-          "📍 From":
+          "📍 Restaurant":
             restaurant,
 
-          "✍️ Specific Request":
-            specialRequest ||
-            "Nothing extra",
+          "✍️ Notes":
+            noteText ||
+            "No extra notes",
 
           "_subject":
             "🍕 New Food Request!",
@@ -1621,7 +2203,8 @@
 
               {
 
-                method: "POST",
+                method:
+                  "POST",
 
                 headers: {
 
@@ -1643,22 +2226,18 @@
             );
 
 
-          const result =
-            await response.json();
-
-
           if (!response.ok) {
 
             throw new Error(
-              result.message ||
-              "Could not send request."
+              "Submission failed"
             );
 
           }
 
 
           /*
-            Put answers on final screen.
+            Put their answers
+            on the final screen.
           */
 
           document
@@ -1679,18 +2258,15 @@
 
           document
             .getElementById(
-              "resultRequest"
+              "resultNotes"
             )
             .textContent =
-              specialRequest ||
-              "Nothing extra";
+              noteText ||
+              "No extra notes";
 
 
-          /*
-            Show success.
-          */
+          goToScreen(5);
 
-          goToScreen(4);
 
           launchConfetti();
 
@@ -1698,23 +2274,24 @@
         } catch (error) {
 
           console.error(
-            "Submission error:",
             error
           );
 
 
           alert(
-            "Hmm... the answer could not be sent. Please try again."
+            "The food request couldn't be sent. Please try again."
           );
 
 
         } finally {
 
-          submitBtn.disabled =
+          submitButton.disabled =
             false;
 
-          submitBtn.textContent =
-            "That's my answer 💌";
+
+          submitButton.textContent =
+            "Submit my highly important request 💌";
+
 
           loading.style.display =
             "none";
@@ -1725,32 +2302,32 @@
     );
 
 
-    /* ==========================================
+    /* =========================================
        CONFETTI
-    ========================================== */
+    ========================================= */
 
     function launchConfetti() {
 
       const colors = [
 
-        "#ff6f91",
+        "#ff7f9f",
 
         "#ffd166",
 
-        "#06d6a0",
+        "#72d6a0",
 
-        "#4cc9f0",
+        "#7bc8f6",
 
-        "#c77dff",
+        "#c69cff",
 
-        "#ff9f1c"
+        "#ffa45c"
 
       ];
 
 
       for (
         let i = 0;
-        i < 90;
+        i < 100;
         i++
       ) {
 
@@ -1792,7 +2369,7 @@
         piece.style.animationDelay =
           (
             Math.random() *
-            0.7
+            0.8
           ) +
           "s";
 
@@ -1803,8 +2380,12 @@
 
 
         setTimeout(
-          () => piece.remove(),
-          4500
+          () => {
+
+            piece.remove();
+
+          },
+          4800
         );
 
       }
